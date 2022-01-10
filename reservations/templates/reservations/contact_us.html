@@ -1,0 +1,37 @@
+{% extends "reservations/base.html" %}
+
+{% block content %}
+  <hr>
+  <section>
+    <div class="container-contact">
+      <div class="center-form contact-items">
+        <div class="email">
+          <form method="POST" onsubmit ="return sendMail(this);"> 
+            <h3>Have a question?</h3>
+            <h6 class="text-center">Send us an email today!</h6>
+            <input type="text" name="name" id="fullname" class="form-control" placeholder="Name" required />
+            <input type="email" name="emailaddress" id="emailaddress" class="form-control" placeholder="Email Address" required />
+            <textarea rows="4" name="ginbooking" id="ginbooking" class="form-control" placeholder="Gin Class Enquiry" required></textarea>
+            <br>
+            <div class="form-row text-center">
+                <div class="col">
+                    <button type="submit" class="btn btn-secondary">Send Enquiry</button>
+                </div>
+              </div>
+          </form>
+          </div>
+        </div>
+        <div class="contact-items">
+          <iframe
+            width="100%"
+            height="100%"
+            style="border:0"
+            loading="lazy"
+            allowfullscreen
+            src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJldu7N84EdkgRiy39aFVBIFE&key=AIzaSyAMptgYoxpwQ5ZA-ztcsITFsTN3AGATTSM">
+          </iframe>
+        </div>
+      </div>
+    </section>
+    
+{% endblock %}

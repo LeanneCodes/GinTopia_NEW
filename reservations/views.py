@@ -36,7 +36,12 @@ def all_about_gin(request):
     data = []
     with open("data/gin.json", "r") as json_data:
         data = json.load(json_data)
-    return render_template("reservations/all_about_gin.html", gin=data)
+
+    context = {
+        'data': data
+    }
+
+    return render(request, "reservations/all_about_gin.html", context)
 
 
 def contact_us(request):

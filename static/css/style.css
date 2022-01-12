@@ -540,6 +540,21 @@ body h4,h5,h6 {
 }
 
 /* SignUp */
+.update-btn {
+    border-color: #967950;
+    border-radius: 5px;
+    background-color: white;
+    color: #967950;
+}
+
+.delete-btn {
+    border-color: darkred;
+    border-radius: 5px;
+    background-color: white;
+    color: darkred;
+}
+
+
 .gintopia-signup {
 	background: #f6f5f7;
     background-image: url("https://res.cloudinary.com/dxa3wjudh/image/upload/v1641760026/GinTopia%20Images/five-gins-2560_dpquci.png") !important;

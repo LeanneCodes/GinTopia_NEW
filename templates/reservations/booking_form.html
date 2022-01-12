@@ -18,9 +18,6 @@
             <div class="col-md-12">
               <div class="booking-form">
                   <div class="form-group">
-                    {% if submitted %}
-                      Your reservation was submitted successfully!
-                    {% else %}
                     <form id="form" action="" method=POST>
                       {% csrf_token %}
                       {{ form.as_table }}
@@ -34,7 +31,6 @@
                     </form>
                   </div>
                 </div>
-                {% endif %}
               </div>
             </div>
           </div>

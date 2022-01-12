@@ -1,7 +1,6 @@
 import json
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import CreateView
-from django.http import HttpResponseRedirect
 from .models import Reservation
 from .forms import ReservationForm
 
@@ -10,13 +9,21 @@ def index(request):
     return render(request, 'reservations/index.html')
 
 
+def update_booking(request):
+    items = Reservation.objects.all()
+    context = {
+        'items': items
+    }
+    return render(request, 'reservations/update_booking.html', context)
+
+
 def booking_form(request):
     submitted = False
     if request.method == "POST":
         form = ReservationForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('/booking_form?submitted=True')
+            return redirect('update_booking')
     else :
         form = ReservationForm
         if 'submitted' in request.GET:
@@ -51,9 +58,4 @@ def contact_us(request):
 def sign_up(request):
     return render(request, 'account/sign_up.html')
 
-
-class ReservationView(CreateView):
-    model = Reservation
-    form_class = ReservationForm
-    template_name = 'booking_form.html'
 

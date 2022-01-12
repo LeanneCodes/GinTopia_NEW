@@ -14,7 +14,8 @@ class ReservationForm(ModelForm):
             'last_name': forms.TextInput(attrs={'class': 'form-control'}),
             'user_email': forms.EmailInput(attrs={'class': 'form-control'}),
             'user_phone': forms.TextInput(attrs={'class': 'form-control'}),
-            'date': forms.DateInput(attrs={'class': 'form-control'}),
+            'date': forms.DateInput(attrs={
+                'class': 'form-control', 'placeholder': 'YYYY/MM/DD'}),
             'time': forms.TextInput(attrs={'class': 'form-control'}),
             'for_how_many': forms.TextInput(attrs={'class': 'form-control'}),
             'requests': forms.Textarea(attrs={'class': 'form-control'}),

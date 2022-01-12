@@ -3,45 +3,46 @@
 {% block content %}
   <hr>
   <section>
-    <div id="booking" class="section-booking">
-      <div class="section-center">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12 booking-cta-container">
-              <div class="booking-cta">
-                <h1>Update Your Booking</h1>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-              <div class="booking-form">
-                  <div class="form-group">
-                    {% if submitted %}
-                      Your reservation was updated successfully!
-                    {% else %}
-                    <form id="form" method=POST>
-                      {% csrf_token %}
-                      {{ form.as_table }}
-                      <br>
-                      <br>
-                      <div class="form-btn">
-                        <button type="submit" id="submit" class="submit-btn">Update Reservation</button>
-                      </div>
-                      <br>
-                      <p class="text-muted text-center">ID will be checked on arrival to confirm you are 18+</p>
-                    </form>
-                  </div>
-                </div>
-                {% endif %}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <br>
+    <h3>GinTopia Class Bookings</h3>
+    <br>
+    <table class="table table-hover">
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email Address</th>
+        <th>Phone Number</th>
+        <th>Class Date</th>
+        <th>Class Time</th>
+        <th>No. of People</th>
+        <th>Mixologist</th>
+      </tr>
+      {% for item in items %}
+      <tr>
+        <td>{{ item.first_name }}</td>
+        <td>{{ item.last_name }}</td>
+        <td>{{ item.user_email }}</td>
+        <td>{{ item.user_phone }}</td>
+        <td>{{ item.date }}</td>
+        <td>{{ item.time }}</td>
+        <td>{{ item.for_how_many }}</td>
+        <td>{{ item.mixologist }}</td>
+        <td>
+          <a href="/update/{{ item.id }}">
+            <button>Edit</button>
+          </a>
+          <a href="/delete/{{ item.id }}">
+            <button>Delete</button>
+          </a>
+          <!-- <button href="update_booking.html" class="btn btn-secondary"><i class="fa fa-edit"></i> Edit</button>
+          <button class="btn btn-secondary"><i class="fa fa-trash"></i> Delete</button> -->
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+    <a href="/booking_form">Add a booking</a>
+    <br>
   </section>
-  <hr>
   <section>
     <div id="bartender-heading">
       <h3>Our Mixologists</h3>

@@ -9,30 +9,42 @@ def index(request):
     return render(request, 'reservations/index.html')
 
 
-def update_booking(request):
+def show_booking(request):
     items = Reservation.objects.all()
     context = {
         'items': items
     }
-    return render(request, 'reservations/update_booking.html', context)
+
+    return render(request, 'reservations/show_booking.html', context)
 
 
 def booking_form(request):
-    submitted = False
     if request.method == "POST":
         form = ReservationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('update_booking')
-    else :
-        form = ReservationForm
-        if 'submitted' in request.GET:
-            submitted = True
+            return redirect('show_booking')
+    form = ReservationForm
     context = {
         'form': form,
-        'submitted': submitted
     }
+
     return render(request, 'reservations/booking_form.html', context)
+
+
+def update_booking(request, item_id):
+    schedule = get_object_or_404(Reservation, id=item_id)
+    if request.method == "POST":
+        form = ReservationForm(request.POST, instance=schedule)
+        if form.is_valid():
+            form.save()
+            return redirect('show_booking')
+    form = ReservationForm
+    context = {
+        'form': form,
+    }
+
+    return render(request, 'reservations/update_booking.html', context)
 
 
 def all_about_gin(request):

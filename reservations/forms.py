@@ -7,7 +7,7 @@ class ReservationForm(ModelForm):
     class Meta:
         model = Reservation
         fields = ['first_name', 'last_name', 'user_email', 'user_phone',
-                  'date', 'time', 'for_how_many', 'requests', 'mixologist']
+                  'date', 'time', 'for_how_many', 'mixologist']
 
         widgets = {
             'first_name': forms.TextInput(attrs={'class': 'form-control'}),
@@ -18,6 +18,5 @@ class ReservationForm(ModelForm):
                 'class': 'form-control', 'placeholder': 'YYYY/MM/DD'}),
             'time': forms.TextInput(attrs={'class': 'form-control'}),
             'for_how_many': forms.TextInput(attrs={'class': 'form-control'}),
-            'requests': forms.Textarea(attrs={'class': 'form-control'}),
             'mixologists': forms.Select(attrs={'class': 'form-control'}),
         }

@@ -27,7 +27,6 @@ class Reservation(models.Model):
     time = models.TimeField(auto_now_add=False)
     for_how_many = models.IntegerField(blank=False)
     status = models.IntegerField(choices=STATUS, default=0)
-    requests = models.TextField(null=True, blank=True)
     mixologist = models.ForeignKey(
         'Mixologist', null=True, on_delete=models.CASCADE)
     slug = models.SlugField(max_length=200, unique=False)

@@ -6,7 +6,6 @@
 /* Main body design */
 body {
     margin: 15px !important;
-    min-height: 100vh;
 }
 
 body p {
@@ -21,6 +20,10 @@ body h1,h2,h3 {
 
 body h4,h5,h6 {
     font-family: 'Raleway', sans-serif;
+}
+
+.gintopia-container {
+    min-height: 70vh;
 }
 
 /* Navbar */

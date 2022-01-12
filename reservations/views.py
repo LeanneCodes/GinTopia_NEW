@@ -47,6 +47,12 @@ def update_booking(request, item_id):
     return render(request, 'reservations/update_booking.html', context)
 
 
+def delete_booking(request, item_id):
+    schedule = get_object_or_404(Reservation, id=item_id)
+    schedule.delete()
+    return redirect('show_booking')
+
+
 def all_about_gin(request):
     return render(request, 'reservations/all_about_gin.html')
 

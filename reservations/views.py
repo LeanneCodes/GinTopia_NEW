@@ -53,6 +53,19 @@ def delete_booking(request, item_id):
     return redirect('show_booking')
 
 
+# def form_filter_view(request):
+#     items = Reservation.objects.all()
+#     queryset = items
+#     email_exact_query = request.GET.get('user_email')
+#     if email_exact_query != '' and email_exact_query is not None:
+#         queryset = queryset.filter(user_email__iexact=email_exact_query)
+
+#     context = {
+#         'queryset': queryset
+#     }
+#     return render(request, 'reservations/show_booking.html', context)
+
+
 def all_about_gin(request):
     return render(request, 'reservations/all_about_gin.html')
 

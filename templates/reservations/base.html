@@ -51,7 +51,7 @@
               <a class="nav-link" href="{% url 'booking_form' %}">Book a Class</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'show_booking' %}">Bookings</a>
+              <a class="nav-link" href="{% url 'show_booking' %}">Your Bookings</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'contact_us' %}">Contact Us</a>
@@ -69,10 +69,11 @@
               <a class="nav-link" href="{% url 'contact_us' %}">Contact Us</a>
             </li>
           </ul>
-          <ul>
-              <a class="nav-link sign-up" href="{% url 'account_signup' %}">Sign Up</a>
-              <a class="nav-link sign-up" href="{% url 'account_login' %}">Login</a>
-          </ul>
+            <span class="navbar-text">
+                <a class="nav-link sign-up sign-up-level" href="{% url 'account_signup' %}">Sign Up</a>
+                <p class="nav-link sign-up"> / </p>
+                <a class="nav-link sign-up sign-up-level" href="{% url 'account_login' %}">Login</a>
+            </span>
           {% endif %}
         </div>
       </div>

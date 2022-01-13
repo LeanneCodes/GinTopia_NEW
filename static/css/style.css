@@ -34,8 +34,16 @@ body h4,h5,h6 {
 }
 
 .sign-up {
-    padding: 0px !important;
+    padding: 2px !important;
     color: #967950 !important;
+}
+
+.sign-up-level {
+    padding: 1rem 0 !important;
+}
+
+.nav-link {
+    display: inline-block !important;
 }
 
 /* Hero Image */
@@ -548,6 +556,7 @@ body h4,h5,h6 {
     border-radius: 5px;
     background-color: white;
     color: #967950;
+    box-shadow: none;
 }
 
 .delete-btn {
@@ -555,6 +564,7 @@ body h4,h5,h6 {
     border-radius: 5px;
     background-color: white;
     color: darkred;
+    box-shadow: none;
 }
 
 

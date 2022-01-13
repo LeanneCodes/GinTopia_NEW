@@ -1,6 +1,6 @@
 import json
 from django.shortcuts import render, redirect, get_object_or_404
-from django.views.generic import CreateView
+from django.views import generic, View
 from .models import Reservation
 from .forms import ReservationForm
 
@@ -51,19 +51,6 @@ def delete_booking(request, item_id):
     schedule = get_object_or_404(Reservation, id=item_id)
     schedule.delete()
     return redirect('show_booking')
-
-
-# def form_filter_view(request):
-#     items = Reservation.objects.all()
-#     queryset = items
-#     email_exact_query = request.GET.get('user_email')
-#     if email_exact_query != '' and email_exact_query is not None:
-#         queryset = queryset.filter(user_email__iexact=email_exact_query)
-
-#     context = {
-#         'queryset': queryset
-#     }
-#     return render(request, 'reservations/show_booking.html', context)
 
 
 def all_about_gin(request):

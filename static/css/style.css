@@ -925,7 +925,7 @@ h2 {
     }
 
     .section-booking {
-        height: 60vh;
+        min-height: 60vh;
     }
 
 }
@@ -958,7 +958,7 @@ h2 {
     }
 
     .section-booking {
-        height: 110vh;
+        min-height: 60vh;
     }
 }
 
@@ -978,7 +978,7 @@ h2 {
     }
 
     .section-booking {
-        height: 120vh;
+        min-height: 40vh;
     }
 }
 

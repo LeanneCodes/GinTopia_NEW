@@ -3,7 +3,6 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
 # Create your models here.
-STATUS = ((0, "Pending"), (1, "Complete"))
 
 
 class Mixologist(models.Model):
@@ -26,7 +25,6 @@ class Reservation(models.Model):
     date = models.DateField(auto_now_add=False)
     time = models.TimeField(auto_now_add=False)
     for_how_many = models.IntegerField(blank=False)
-    status = models.IntegerField(choices=STATUS, default=0)
     mixologist = models.ForeignKey(
         'Mixologist', null=True, on_delete=models.CASCADE)
     slug = models.SlugField(max_length=200, unique=False)

@@ -20,9 +20,7 @@
                   <div class="form-group">
                     <form id="form" action="" method=POST>
                       {% csrf_token %}
-                      {{ form.as_table }}
-                      <br>
-                      <br>
+                      {{ form.as_p }}
                       <div class="form-btn">
                         <input type="submit" id="submit" class="submit-btn" value="Book Now">
                       </div>

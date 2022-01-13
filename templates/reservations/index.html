@@ -14,7 +14,11 @@
                 <p class="lead card-text">Learn how to make your favourite<br>gin-based drinks with us!*
                     <span class="d-inline d-sm-none"><br></span>
                     <br>
+                {% if user.is_authenticated %}
                 <a href="{% url 'booking_form' %}" class="cta-btn btn btn-light stretched-link">Book Now</a>
+                {% else %}
+                <a href="{% url 'account_signup' %}" class="cta-btn btn btn-light stretched-link">Join Us</a>
+                {% endif %}
                 <p class="disclaimer"><small>*You must be at least 18 years old<br>to book a class with us.</small></p>
             </section>
         </div>

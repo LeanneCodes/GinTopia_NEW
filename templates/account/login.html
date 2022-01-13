@@ -11,10 +11,10 @@
 <div class="container">
   <div class="row">
       <div class="col-md-8 mt-3 offset-md-2">
-          <h3>{% trans "Sign In" %}</h3>
+          <h3>{% trans "Login In" %}</h3>
 
-          <p class="text-center">{% blocktrans %}Welcome back to GinTopia.<br>To view your bookings, please log in. If
-              you have not created an account yet, then <a class="link" href="{{ signup_url }}">sign up</a>
+          <p class="text-center">{% blocktrans %}Welcome back to GinTopia.<br>If
+              you have not created an account yet, then <a class="link" href="{{ signup_url }}" style="text-decoration: none; color:#967950;"><strong>sign up</strong></a>
               first.{% endblocktrans %}</p>
       </div>
   </div>
@@ -26,7 +26,7 @@
               {% if redirect_field_value %}
               <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
               {% endif %}
-              <button class="btn btn-secondary" type="submit">{% trans "Sign In" %}</button>
+              <button class="btn btn-secondary" type="submit">{% trans "Login" %} &raquo;</button>
           </form>
       </div>
   </div>

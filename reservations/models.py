@@ -18,6 +18,8 @@ class Mixologist(models.Model):
 
 
 class Reservation(models.Model):
+    user = models.ForeignKey(User, default='', null=True,
+                             on_delete=models.CASCADE, related_name='hiuser')
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     user_email = models.EmailField(max_length=254)
@@ -34,4 +36,3 @@ class Reservation(models.Model):
 
     def __str__(self):
         return self.user_email
-

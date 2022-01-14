@@ -297,7 +297,7 @@ body h4,h5,h6 {
 /* Book a Class */
 .section-booking {
 	position: relative;
-	height: 150vh;
+	height: 70vh;
 }
 
 .section-booking .section-center {
@@ -362,7 +362,7 @@ body h4,h5,h6 {
 	max-width: 642px;
 	width: 100%;
 	margin: auto;
-	padding: 10px 20px;
+	padding: 30px 20px 10px;
 }
 
 .booking-form .form-group {

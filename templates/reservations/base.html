@@ -91,13 +91,13 @@
         <!-- Social links grid container -->
         <div class="container p-4 pb-0">
           <!-- Facebook -->
-          <a class="btn btn-outline-light btn-floating m-1" href="http://www.facebook.com" target="_blank" role="button"
+          <a class="gt-btn-social" href="http://www.facebook.com" target="_blank" role="button"
           ><i class="fab fa-facebook-f"></i></a>
           <!-- Twitter -->
-          <a class="btn btn-outline-light btn-floating m-1" href="http://www.twitter.com" target="_blank" role="button"
+          <a class="gt-btn-social" href="http://www.twitter.com" target="_blank" role="button"
           ><i class="fab fa-twitter"></i></a>
           <!-- Instagram -->
-          <a class="btn btn-outline-light btn-floating m-1" href="http://www.instagram.com" target="_blank" role="button"
+          <a class="gt-btn-social" href="http://www.instagram.com" target="_blank" role="button"
           ><i class="fab fa-instagram"></i></a>
         </div>
         <!-- /.social links grid container -->
@@ -107,9 +107,9 @@
           <p class="d-flex justify-content-center align-items-center">
             <span class="me-3">Book a class with us!</span>
             {% if user.is_authenticated %}
-            <a class="btn btn-light" href="{% url 'booking_form' %}">Book Now</a>
+            <a class="gt-btn-light" href="{% url 'booking_form' %}">Book Now</a>
             {% else %}
-            <a class="btn btn-light" href="{% url 'account_signup' %}">Join Us</a>
+            <a class="gt-btn-light" href="{% url 'account_signup' %}">Join Us</a>
             {% endif %}
           </p>
         </section>

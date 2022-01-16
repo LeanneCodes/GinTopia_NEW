@@ -137,10 +137,11 @@
     <!-- MDB CDN -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.js"></script>
     <!-- Email JS -->
-    <script src="static/js/sendEmail.js"></script>
+    <script src="{% static 'js/sendEmail.js' %}"></script>
     <!-- Custom JS Script -->
+    <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/modals.js' %}"></script>
     <script src="{% static 'js/config.js' %}"></script>
-    <script src="{% static 'js/signUp.js' %}"></script>
     <script>
       $("#copyright").text(new Date().getFullYear());
     </script>

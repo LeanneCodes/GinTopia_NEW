@@ -1,5 +1,6 @@
 import json
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib import messages
 from .models import Reservation
 from .forms import ReservationForm
 
@@ -23,7 +24,10 @@ def booking_form(request):
         if form.is_valid():
             form.instance.user = request.user
             form.save()
+            messages.success(request, 'Your booking was created successfully!')
             return redirect('show_booking')
+        else:
+            messages.warning(request, 'Please correct the error(s).')
     else: 
         form = ReservationForm
         context = {
@@ -39,7 +43,10 @@ def update_booking(request, item_id):
         form = ReservationForm(request.POST, instance=schedule)
         if form.is_valid():
             form.save()
+            messages.success(request, 'Your booking was updated successfully!')
             return redirect('show_booking')
+        else:
+            messages.warning(request, 'Please correct the error(s).')
     form = ReservationForm
     context = {
         'form': form,
@@ -50,8 +57,11 @@ def update_booking(request, item_id):
 
 def delete_booking(request, item_id):
     schedule = get_object_or_404(Reservation, id=item_id)
-    schedule.delete()
-    return redirect('show_booking')
+    if schedule.delete():
+        messages.success(request, 'Your booking was deleted successfully!')
+        return redirect('show_booking')
+    else:
+        messages.warning(request, 'Please correct the error(s).')
 
 
 def all_about_gin(request):

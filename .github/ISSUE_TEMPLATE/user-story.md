@@ -18,4 +18,4 @@ As a **role**, I can **capability**, so that **received benefit**.
 - [ ] abc
 
 ### Story Points Estimation
-Score of x points
+A score of x points

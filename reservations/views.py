@@ -82,6 +82,7 @@ def all_about_gin(request):
 
 def contact_us(request):
     return render(request, 'reservations/contact_us.html')
+    
 
 
 def sign_up(request):

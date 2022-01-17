@@ -27,7 +27,7 @@ def booking_form(request):
             messages.success(request, 'Your booking was created successfully!')
             return redirect('show_booking')
         else:
-            messages.warning(request, 'Please correct the error(s).')
+            messages.warning(request, 'Please ensure all fields are correct.')
     else: 
         form = ReservationForm
         context = {
@@ -46,7 +46,7 @@ def update_booking(request, item_id):
             messages.success(request, 'Your booking was updated successfully!')
             return redirect('show_booking')
         else:
-            messages.warning(request, 'Please correct the error(s).')
+            messages.warning(request, 'Booking was not updated.')
     form = ReservationForm
     context = {
         'form': form,
@@ -61,7 +61,7 @@ def delete_booking(request, item_id):
         messages.success(request, 'Your booking was deleted successfully!')
         return redirect('show_booking')
     else:
-        messages.warning(request, 'Please correct the error(s).')
+        messages.warning(request, 'Booking was not deleted.')
 
 
 def all_about_gin(request):
@@ -82,9 +82,3 @@ def all_about_gin(request):
 
 def contact_us(request):
     return render(request, 'reservations/contact_us.html')
-    
-
-
-def sign_up(request):
-    return render(request, 'account/sign_up.html')
-

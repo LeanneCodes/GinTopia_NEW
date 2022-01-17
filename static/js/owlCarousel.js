@@ -2,7 +2,7 @@ $(document).ready(function () {
     var silder = $(".owl-carousel");
     silder.owlCarousel({
     autoplay: true,
-    autoplayTimeout: 6000,
+    autoplayTimeout: 10000,
     autoplayHoverPause: false,
     items: 1,
     stagePadding: 20,

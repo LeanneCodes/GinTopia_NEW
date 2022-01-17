@@ -152,10 +152,17 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.js"></script>
     <!-- Email JS -->
     <script src="{% static 'js/sendEmail.js' %}"></script>
-    <!-- Custom JS Script -->
+    <!-- Extra JS Script -->
     <script src="{% static 'js/script.js' %}"></script>
     <script src="{% static 'js/modals.js' %}"></script>
     <script src="{% static 'js/config.js' %}"></script>
+    <script>
+      setTimeout(function () {
+          let messages = document.getElementById('msg');
+          let alert = new bootstrap.Alert(messages);
+          alert.close();
+      }, 2500);
+    </script>
     <script>
       $("#copyright").text(new Date().getFullYear());
     </script>

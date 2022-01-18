@@ -30,7 +30,8 @@ def booking_form(request):
             messages.success(request, 'Your booking was created successfully!')
             return redirect('show_booking')
         else:
-            messages.warning(request, 'Please ensure all fields are correct.')
+            messages.warning(request,
+                             'Please ensure all fields have valid inputs.')
     else:
         form = ReservationForm
         context = {

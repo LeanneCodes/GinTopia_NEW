@@ -1,3 +1,4 @@
+// Carousel for the customer reviews, rotating every 10 seconds
 $(document).ready(function () {
     var silder = $(".owl-carousel");
     silder.owlCarousel({

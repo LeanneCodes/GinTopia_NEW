@@ -5,10 +5,12 @@ from .models import Reservation
 from .forms import ReservationForm
 
 
+# Homepage view
 def index(request):
     return render(request, 'reservations/index.html')
 
 
+# Show logged in users their current bookings, if they have any
 def show_booking(request):
     items = request.user.hiuser.all()
     context = {
@@ -18,6 +20,7 @@ def show_booking(request):
     return render(request, 'reservations/show_booking.html', context)
 
 
+# Show logged in users the booking form to create their booking
 def booking_form(request):
     if request.method == "POST":
         form = ReservationForm(request.POST)
@@ -28,7 +31,7 @@ def booking_form(request):
             return redirect('show_booking')
         else:
             messages.warning(request, 'Please ensure all fields are correct.')
-    else: 
+    else:
         form = ReservationForm
         context = {
             'form': form,
@@ -37,6 +40,8 @@ def booking_form(request):
     return render(request, 'reservations/booking_form.html', context)
 
 
+# Give logged in users the opportunity to update their bookings
+# and be redirected to other bookings they may have
 def update_booking(request, item_id):
     schedule = get_object_or_404(Reservation, id=item_id)
     if request.method == "POST":
@@ -55,6 +60,8 @@ def update_booking(request, item_id):
     return render(request, 'reservations/update_booking.html', context)
 
 
+# Logged in users can delete their booking and be redirected
+# to other bookings they may have
 def delete_booking(request, item_id):
     schedule = get_object_or_404(Reservation, id=item_id)
     if schedule.delete():
@@ -64,10 +71,9 @@ def delete_booking(request, item_id):
         messages.warning(request, 'Booking was not deleted.')
 
 
-def all_about_gin(request):
-    return render(request, 'reservations/all_about_gin.html')
-
-
+# All About Gin page view
+# The gin.json file that populates the top 10 gin bottles and a
+# description of the bottles on the All About Gin page
 def all_about_gin(request):
     data = []
     with open("data/gin.json", "r") as json_data:
@@ -80,5 +86,6 @@ def all_about_gin(request):
     return render(request, "reservations/all_about_gin.html", context)
 
 
+# The Contact Us page view
 def contact_us(request):
     return render(request, 'reservations/contact_us.html')

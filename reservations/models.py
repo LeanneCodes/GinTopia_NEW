@@ -2,9 +2,9 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
-# Create your models here.
 
-
+# Mixologist model created, so if a mixologist is no longer
+# available to work, bookings made with them will be cancelled
 class Mixologist(models.Model):
     first_name = models.CharField(primary_key=True, max_length=30)
     last_name = models.CharField(max_length=30)
@@ -17,6 +17,9 @@ class Mixologist(models.Model):
         return self.first_name
 
 
+# Reservation model created, so the admin can collect details
+# from the user during the booking process, which can help
+# facilitate with the event on the day.
 class Reservation(models.Model):
     user = models.ForeignKey(User, default='', null=True,
                              on_delete=models.CASCADE, related_name='hiuser')

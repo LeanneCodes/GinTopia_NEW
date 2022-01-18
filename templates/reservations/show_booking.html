@@ -1,6 +1,7 @@
 {% extends "reservations/base.html" %}
 
 {% block content %}
+
   <section>
     <br>
     <h3>GinTopia Class Bookings</h3>
@@ -41,10 +42,7 @@
       </tr>
       {% endfor %}
     </table>
-
     <p class="text-center"><a class="gt-btn-dark" href="{% url 'booking_form' %}">Add a booking</a></p>
-    
-
   </section>
   
 {% endblock %}

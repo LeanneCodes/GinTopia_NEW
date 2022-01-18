@@ -3,6 +3,7 @@ from django.forms import ModelForm
 from .models import Reservation
 
 
+# The fields available to iterate through in the user interface
 class ReservationForm(ModelForm):
     class Meta:
         model = Reservation

@@ -761,7 +761,7 @@ body h4,h5,h6 {
     }
 
     .section-booking {
-        min-height: 80vh;
+        min-height: 100vh;
     }
 
 }
@@ -773,7 +773,7 @@ body h4,h5,h6 {
     }
 
     .section-booking {
-        min-height: 140vh;
+        min-height: 200vh;
     }
 }
 
@@ -792,9 +792,6 @@ body h4,h5,h6 {
         display: block;
     }
 
-    .section-booking {
-        min-height: 150vh;
-    }
 }
 
 /* for small screens size from 390px wide and down */

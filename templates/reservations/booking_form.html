@@ -50,13 +50,13 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label class="label">Date</label>
-                        {% render_field form.date class="form-control" placeholder="YYYY-MM-DD" %}
+                        {% render_field form.date class="form-control" type="date" %}
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
                         <label class="label">Time</label>
-                        {% render_field form.time class="form-control" placeholder="HH:MM" %}
+                        {% render_field form.time class="form-control" %}
                       </div>
                     </div>
                   </div>
@@ -80,6 +80,7 @@
                   <br>
                   <div>
                     <p class="text-muted text-center">ID will be checked on arrival to confirm you are 18+</p>
+                    <p class="text-muted text-center">Classes are from 13:00 and run every hour. Last class is at 21:00</p>
                   </div>
                 </form>
               </div>

@@ -31,7 +31,10 @@ def booking_form(request):
             return redirect('show_booking')
         else:
             messages.warning(request,
+                             'Booking not successful. '
+                             'Check date chosen is not in the past. '
                              'Please ensure all fields have valid inputs.')
+            return redirect('booking_form')
     else:
         form = ReservationForm
         context = {
@@ -52,7 +55,9 @@ def update_booking(request, item_id):
             messages.success(request, 'Your booking was updated successfully!')
             return redirect('show_booking')
         else:
-            messages.warning(request, 'Booking was not updated.')
+            messages.warning(request, 'Booking was not updated. '
+                             'Check date chosen is not in the past. '
+                             'Please ensure all fields have valid inputs.')
     form = ReservationForm
     context = {
         'form': form,

@@ -1,3 +1,5 @@
+import datetime
+from django.core.validators import MinValueValidator
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
@@ -21,15 +23,36 @@ class Mixologist(models.Model):
 # from the user during the booking process, which can help
 # facilitate with the event on the day.
 class Reservation(models.Model):
+    TIMES = [
+        ("13:00", "13:00"),
+        ("15:00", "15:00"),
+        ("17:00", "17:00"),
+        ("19:00", "19:00"),
+        ("21:00", "21:00")
+    ]
+
+    PEOPLE = [
+        ("1", "1"),
+        ("2", "2"),
+        ("3", "3"),
+        ("4", "4"),
+        ("5", "5"),
+        ("6", "6"),
+        ("7", "7"),
+        ("8", "8"),
+        ("9", "9"),
+        ("10", "10")
+    ]
+
     user = models.ForeignKey(User, default='', null=True,
                              on_delete=models.CASCADE, related_name='hiuser')
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     user_email = models.EmailField(max_length=254)
     user_phone = models.CharField(max_length=11)
-    date = models.DateField(auto_now_add=False)
-    time = models.TimeField(auto_now_add=False)
-    for_how_many = models.IntegerField(blank=False)
+    date = models.DateField(validators=[MinValueValidator(datetime.date.today)])
+    time = models.CharField(max_length=6, choices=TIMES)
+    for_how_many = models.CharField(max_length=6, choices=PEOPLE)
     mixologist = models.ForeignKey(
         'Mixologist', null=True, on_delete=models.CASCADE)
     slug = models.SlugField(max_length=200, unique=False)

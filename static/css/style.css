@@ -393,7 +393,7 @@ body h4,h5,h6 {
 /* Book a Class */
 .section-booking {
 	position: relative;
-	height: 40vh;
+	height: 80vh;
 }
 
 .section-booking .section-center {
@@ -696,15 +696,13 @@ body h4,h5,h6 {
 
 /* for larger screens size from 1920px wide and down */
 @media screen and (max-width: 1920px) {
-    .section-booking {
-        min-height: 60vh;
-    }
+
 }
 
 /* for larger screens size from 1440px wide and down */
 @media screen and (max-width: 1440px) {
     .section-booking {
-        min-height: 70vh;
+        min-height: 90vh;
     }
 }
 

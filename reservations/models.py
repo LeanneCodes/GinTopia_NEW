@@ -50,13 +50,13 @@ class Reservation(models.Model):
     last_name = models.CharField(max_length=30)
     user_email = models.EmailField(max_length=254)
     user_phone = models.CharField(max_length=11)
-    date = models.DateField(validators=[MinValueValidator(
-                                        datetime.date.today)])
+    date = models.DateField(max_length=10, validators=[MinValueValidator(
+                            datetime.date.today)])
     time = models.CharField(max_length=5, choices=TIMES)
     for_how_many = models.CharField(max_length=6, choices=PEOPLE)
-    mixologist = models.ForeignKey(
-        'Mixologist', null=True, on_delete=models.CASCADE)
-    slug = models.SlugField(max_length=200, unique=False)
+    mixologist = models.ForeignKey('Mixologist', null=True,
+                                   on_delete=models.CASCADE)
+    slug = models.SlugField(max_length=250, unique=False)
 
     class Meta:
         ordering = ["date"]

@@ -407,7 +407,7 @@ body h4,h5,h6 {
 
 #booking {
 	font-family: 'Montserrat', sans-serif;
-    background-image: url("https://res.cloudinary.com/dxa3wjudh/image/upload/v1642715014/GinTopia%20Images/alaksiej-carankievic-K5Kc2gHERbA-unsplash_taqrsq.jpg");
+    background-image: url("https://res.cloudinary.com/dxa3wjudh/image/upload/v1642717382/GinTopia%20Images/Untitled_design_18_ntqprf.png");
 	background-color: black;
 	background-size: cover;
     background-position: center;
@@ -420,7 +420,6 @@ body h4,h5,h6 {
 	right: 0;
 	bottom: 0;
 	top: 0;
-    background: rgba(255, 255, 255, 0.7)
 }
 
 .booking-cta {

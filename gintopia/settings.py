@@ -18,7 +18,6 @@ from django.contrib.messages import constants as messages
 if os.path.isfile("env.py"):
     import env
 
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
@@ -55,6 +54,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'reservations',
     'widget_tweaks',
+    'django.core.mail',
 ]
 
 SITE_ID = 1
@@ -165,3 +165,12 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Send confirmation email in views.py
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'gintopia.london@gmail.com'
+EMAIL_HOST_PASSWORD = env.EMAIL_HOST_PASSWORD
+

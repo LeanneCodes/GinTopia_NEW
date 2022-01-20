@@ -1,7 +1,8 @@
 import json
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
-from .models import Reservation
+from django.core.mail import send_mail
+from .models import Reservation, User
 from .forms import ReservationForm
 
 
@@ -28,6 +29,19 @@ def booking_form(request):
             form.instance.user = request.user
             form.save()
             messages.success(request, 'Your booking was created successfully!')
+            username = "username"
+            first_name = request.POST["first_name"]
+            email = request.POST["user_email"]
+            user = User.objects.create_user(
+                username=username,
+                first_name=first_name,
+                email=email
+            )
+            subject = 'GinTopia Class Booking'
+            message = f'Hi {user.first_name}, your booking is confirmed'
+            from_email = 'gintopia.london@gmail.com'
+            recipient_list = [user.email, ]
+            send_mail(subject, message, from_email, recipient_list)
             return redirect('show_booking')
         else:
             messages.warning(request,

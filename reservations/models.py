@@ -47,6 +47,7 @@ class Reservation(models.Model):
     user = models.ForeignKey(User, default='', null=True,
                              on_delete=models.CASCADE, related_name='hiuser')
     first_name = models.CharField(max_length=30)
+    age = models.IntegerField(blank=False, null=False, default=18)
     last_name = models.CharField(max_length=30)
     user_email = models.EmailField(max_length=254)
     user_phone = models.CharField(max_length=11)

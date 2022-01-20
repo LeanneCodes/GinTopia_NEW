@@ -68,6 +68,14 @@
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
+                        <label class="label">What's Your Age?</label>
+                        {% render_field form.age class="form-control" placeholder="Age" min="18" %}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
                         <label class="label">Mixologist</label>
                         {% render_field form.mixologist class="form-control" %}
                       </div>

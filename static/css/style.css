@@ -641,6 +641,35 @@ body h4,h5,h6 {
     padding-top: 2rem;
 }
 
+/* .modal-container-gt {
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+.modal-container-gt.show {
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.modal-gt {
+    background-color: white;
+    padding: 30px 50px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    width: 600px;
+    max-width: 100%;
+    text-align: center;
+} */
+
 /* Contact Us */
 .container-contact {
     display: grid;

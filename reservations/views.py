@@ -78,7 +78,7 @@ def update_booking(request, item_id):
             mixologist = request.POST["mixologist"]
             subject = 'GinTopia Class Booking'
             message = (
-                f'Hi {first_name}! Your booking has been updated for '
+                f'Hi {first_name}! Your booking has been updated to '
                 f'{time} on {date} with {mixologist} for {people}. '
                 f'See you soon!'
             )

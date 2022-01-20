@@ -35,14 +35,39 @@
           </a>
         </td>
         <td>
-          <a href="/delete/{{ item.id }}">
+          <!-- <a href="/delete/{{ item.id }}">
             <button id="open" class="delete-btn"><i class="fa fa-trash"></i> Delete</button>
-          </a>
+          </a> -->
+          <!-- Button trigger modal -->
+          <button type="button" class="delete-btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-trash"></i>
+            Delete
+          </button>
+          
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+              <h3 class="modal-title" id="exampleModalLabel">GinTopia Class Booking</h3>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+              Do you wish to delete this booking?
+              </div>
+              <div class="modal-footer">
+              <button type="button" class="gt-btn-dark" data-bs-dismiss="modal">Close</button>
+              <a href="/delete/{{ item.id }}">
+                <button type="button" class="gt-btn-success">Yes, Delete</button>
+              </a>
+              </div>
+            </div>
+            </div>
+          </div>
         </td>
       </tr>
       {% endfor %}
     </table>
     <p class="text-center"><a class="gt-btn-dark" href="{% url 'booking_form' %}">Add a booking</a></p>
   </section>
-  
+
 {% endblock %}

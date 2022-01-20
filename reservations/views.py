@@ -2,7 +2,7 @@ import json
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.core.mail import send_mail
-from .models import Reservation, User
+from .models import Reservation, Mixologist, User
 from .forms import ReservationForm
 
 

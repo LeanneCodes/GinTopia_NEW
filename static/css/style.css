@@ -702,13 +702,13 @@ body h4,h5,h6 {
 /* for larger screens size from 1440px wide and down */
 @media screen and (max-width: 1440px) {
     .section-booking {
-        min-height: 90vh;
+        min-height: 100vh;
     }
+
 }
 
 /* for larger to medium screens size from 1366px wide and down */
 @media screen and (max-width: 1366px) {
-    
 }
 
 /* for medium screens size from 1280px wide and down */
@@ -717,6 +717,7 @@ body h4,h5,h6 {
         grid-template-columns: auto auto auto;
         justify-content: space-evenly;
     }
+
 }
 
 /* for larger to medium screens size from 1024px wide and down */
@@ -771,7 +772,7 @@ body h4,h5,h6 {
     }
 
     .section-booking {
-        min-height: 200vh;
+        min-height: 140vh;
     }
 }
 

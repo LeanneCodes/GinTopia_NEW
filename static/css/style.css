@@ -206,8 +206,8 @@ body h4,h5,h6 {
 .callout-container {
     height: 100vh;
     background-color: black;
-    background: url('https://res.cloudinary.com/dxa3wjudh/image/upload/v1642682078/GinTopia%20Images/Untitled_design_15_khgu8d.png') no-repeat center center fixed;
-    opacity: 0.8;
+    background: url('https://res.cloudinary.com/dxa3wjudh/image/upload/v1642699098/GinTopia%20Images/henry-be-Gu-9gBF4x7Q-unsplash_fhdhks.jpg') no-repeat center center fixed;
+    opacity: 1;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -326,7 +326,7 @@ body h4,h5,h6 {
 /* Gallery */
 .gin-gallery-container {
     display: grid;
-    grid-template-columns: repeat(6,1fr);
+    grid-template-columns: repeat(4,1fr);
     grid-auto-rows: 100px 300px;
     grid-gap: 10px;
 }

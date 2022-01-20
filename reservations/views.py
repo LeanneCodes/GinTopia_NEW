@@ -29,21 +29,6 @@ def booking_form(request):
             form.instance.user = request.user
             form.save()
             messages.success(request, 'Your booking was created successfully!')
-            first_name = request.POST["first_name"]
-            email = request.POST["user_email"]
-            date = request.POST["date"]
-            time = request.POST["time"]
-            people = request.POST["for_how_many"]
-            mixologist = request.POST["mixologist"]
-            subject = 'GinTopia Class Booking'
-            message = (
-                f'Hi {first_name}! Your booking is confirmed for '
-                f'{time} on {date} with {mixologist} for {people}. '
-                f'See you soon!'
-            )
-            from_email = 'gintopia.london@gmail.com'
-            recipient_list = [email, ]
-            send_mail(subject, message, from_email, recipient_list)
             return redirect('show_booking')
         else:
             messages.warning(request,
@@ -70,21 +55,6 @@ def update_booking(request, item_id):
             form.instance.user = request.user
             form.save()
             messages.success(request, 'Your booking was updated successfully!')
-            first_name = request.POST["first_name"]
-            email = request.POST["user_email"]
-            date = request.POST["date"]
-            time = request.POST["time"]
-            people = request.POST["for_how_many"]
-            mixologist = request.POST["mixologist"]
-            subject = 'GinTopia Class Booking'
-            message = (
-                f'Hi {first_name}! Your booking has been updated to '
-                f'{time} on {date} with {mixologist} for {people}. '
-                f'See you soon!'
-            )
-            from_email = 'gintopia.london@gmail.com'
-            recipient_list = [email, ]
-            send_mail(subject, message, from_email, recipient_list)
             return redirect('show_booking')
         else:
             messages.warning(request, 'Booking was not updated. '
@@ -104,13 +74,6 @@ def delete_booking(request, item_id):
     schedule = get_object_or_404(Reservation, id=item_id)
     if schedule.delete():
         messages.success(request, 'Your booking was deleted successfully!')
-        subject = 'GinTopia Class Booking'
-        message = (
-            'Hi! Your booking has been deleted.'
-        )
-        from_email = 'gintopia.london@gmail.com'
-        recipient_list = [request.user.email, ]
-        send_mail(subject, message, from_email, recipient_list)
         return redirect('show_booking')
     else:
         messages.warning(request, 'Booking was not deleted.')

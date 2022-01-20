@@ -15,5 +15,5 @@ class ReservationAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('mixologist',)}
     list_filter = ('date', 'mixologist')
     list_display = ('mixologist', 'user_email', 'first_name',
-                    'last_name', 'age', 'date', 'time')
+                    'last_name', 'age', 'gender', 'date', 'time')
     search_fields = ['date', 'time']

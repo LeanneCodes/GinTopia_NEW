@@ -808,15 +808,15 @@ body h4,h5,h6 {
         font-size: 1em;
     }
 
+    .section-booking {
+        min-height: 220vh;
+    }
+
 }
 
 /* for small screens size from 360px wide and down */
 @media(max-width: 360px) {
     .owl-carousel .owl-item .card .name {
         margin: auto;
-    }
-
-    .section-booking {
-        min-height: 220vh;
     }
 }

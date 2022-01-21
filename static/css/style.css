@@ -407,7 +407,7 @@ body h4,h5,h6 {
 
 #booking {
 	font-family: 'Montserrat', sans-serif;
-    background-image: url("https://res.cloudinary.com/dxa3wjudh/image/upload/v1642682078/GinTopia%20Images/Untitled_design_15_khgu8d.png");
+    background-image: url("https://res.cloudinary.com/dxa3wjudh/image/upload/v1642762380/GinTopia%20Images/Untitled_design_19_goimuo.png");
 	background-color: black;
 	background-size: cover;
     background-position: center;
@@ -420,6 +420,7 @@ body h4,h5,h6 {
 	right: 0;
 	bottom: 0;
 	top: 0;
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
 .booking-cta {
@@ -438,8 +439,8 @@ body h4,h5,h6 {
     justify-content:center;
 }
 
-.booking-cta h1 {
-	font-size: 4em;
+.booking-cta h2 {
+	font-size: 3em;
 	color: whitesmoke !important;
 	font-weight: 900;
 }
@@ -762,6 +763,21 @@ body h4,h5,h6 {
         min-height: 120vh;
     }
 
+    .callout-container {
+        height: 100vh;
+        background-color: black;
+        background: url('https://res.cloudinary.com/dxa3wjudh/image/upload/v1642715213/GinTopia%20Images/pushpak-dsilva-EWvwU90LOwY-unsplash_b5swxe.jpg') no-repeat center center fixed;
+        opacity: 0.8;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
 }
 
 /* for small screens size from 575px wide and down */
@@ -771,7 +787,7 @@ body h4,h5,h6 {
     }
 
     .section-booking {
-        min-height: 180vh;
+        min-height: 190vh;
     }
 }
 

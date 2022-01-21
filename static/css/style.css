@@ -1,7 +1,5 @@
 /* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Birthstone&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
 /* Main body design */
 body {
@@ -768,14 +766,6 @@ body h4,h5,h6 {
         background-color: black;
         background: url('https://res.cloudinary.com/dxa3wjudh/image/upload/v1642699100/GinTopia%20Images/henry-be-z_hRY3TZCII-unsplash_hz0zzu.jpg') no-repeat center center fixed;
         opacity: 0.8;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-    
-        display: flex;
-        align-items: center;
-        justify-content: center;
     }
 
 }
@@ -787,7 +777,7 @@ body h4,h5,h6 {
     }
 
     .section-booking {
-        min-height: 190vh;
+        min-height: 200vh;
     }
 }
 
@@ -827,6 +817,6 @@ body h4,h5,h6 {
     }
 
     .section-booking {
-        min-height: 200vh;
+        min-height: 220vh;
     }
 }

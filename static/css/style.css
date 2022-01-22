@@ -641,7 +641,7 @@ body h4,h5,h6 {
 
 /* Modal */
 .modal-backdrop {
-    position: fixed;
+    position: absolute;
     top: 0;
     right: 0;
     bottom: 0;

@@ -639,6 +639,18 @@ body h4,h5,h6 {
     padding-top: 2rem;
 }
 
+/* Modal */
+.modal-backdrop {
+    /* bug fix - no overlay */    
+    display: none !important;    
+}
+
+.modal{
+  /* bug fix - custom overlay */   
+  background-color: rgba(10,10,10,0.45);
+}
+
+
 /* Contact Us */
 .container-contact {
     display: grid;

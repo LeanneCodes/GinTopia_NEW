@@ -640,13 +640,15 @@ body h4,h5,h6 {
 }
 
 /* Modal */
-.animated {
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-    z-index: 100;
-}
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background-color: #000000;
+  }
 
 
 /* Contact Us */

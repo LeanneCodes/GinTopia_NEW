@@ -616,7 +616,7 @@ body h4,h5,h6 {
 }
 
 .bartender-intro {
-    background-color:c;
+    background-color:#f9f9f6;
     color: #867f71;
     text-align: center;
     padding: 10px 60px;
@@ -629,6 +629,7 @@ body h4,h5,h6 {
 #bartender-heading {
     text-align: center;
     padding: 10px 20px;
+    background-color:#f9f9f6;
 }
 
 #bartender-heading p {

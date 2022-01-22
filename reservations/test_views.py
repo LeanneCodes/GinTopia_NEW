@@ -14,7 +14,7 @@ class TestViews(TestCase):
         response = self.client.get('/all_about_gin')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'reservations/all_about_gin.html')
-        
+
     def test_book_a_class(self):
         response = self.client.get('/booking_form')
         self.assertEqual(response.status_code, 200)

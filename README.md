@@ -57,7 +57,8 @@ The project design is split into 3 parts: the appearance of the website, access 
     * This data can be filtered in a few ways, so that the admin can see which booking records fall under specific search/filter criteria.
 
 ## Current Features
-
+<details>
+<summary>Features</summary>
 ### Homepage
 * The homepage consists of 3 sections, the hero image, customer reviews and gallery.
     * Hero Image
@@ -149,6 +150,7 @@ The project design is split into 3 parts: the appearance of the website, access 
 
 ### Footer
 * The footer, which is consistently display across every page is there to serve two functions. Direct users to GinTopia’s social media pages and encourage users to either book a class or create an account depending on their logged in status.
+</details>
 
 ## Future Implementations
 * Add a fun facts page about gin.
@@ -164,7 +166,8 @@ The project design is split into 3 parts: the appearance of the website, access 
 * Users will be able to select multiple bookings to delete in one go.
 
 ## Testing
-
+<details>
+    <summary>Tests Conducted</summary>
 ### Automated
 * The automated coverage report results at 88%. The remaining 12% of tests is covered under manual testing.
 
@@ -188,6 +191,7 @@ Django | Administration Backend | To show that the model strings return as eithe
 * Heroku works correctly as planned across Google Chrome, Safari, Microsoft Edge and Mozilla Firefox
 
 * Tested the Heroku program on iPhone 11, Google Pixel 2, Motorola Edge and Huawei P9
+</details>
 
 ## Project Bugs & Solutions
 
@@ -204,6 +208,8 @@ Bugs | Unsolved
 Mobile Bootstrap Modal – The modal appears and works correctly across all screen devices via devtools and works outside of devtools, except for iPhones, where the modal grey backdrop appears, but the modal itself is partially in view, or doesn’t show at all. | Currently, no solution to this problem, but it does function correctly on devtools with the dimensions specified for an iPhone 12 Pro.
 
 ## Deployment
+<details>
+    <summary>Step-by-step</summary>
 Section | Number | Step | Code | Notes
 -------- | -------- | -------- | -------- | --------
 Heroku Setup and CLI | 1 | In Heroku.com, Create an account with Heroku.com | www.heroku.com |
@@ -288,6 +294,7 @@ The SECRET_KEY | 9 | Create new variable | Name: SECRET_KEY | Value: Copy and Pa
 The SECRET_KEY | 10 | In the terminal, add the git repo | git add . |
 The SECRET_KEY | 11 | Commit | git commit -m “Removed Secret Key” |
 The SECRET_KEY | 12 | Push to heroku | git push origin master main | Note: Run server to view output
+</details>
 
 ## Technologies Used
 * HTML5

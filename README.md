@@ -59,6 +59,7 @@ The project design is split into 3 parts: the appearance of the website, access 
 ## Current Features
 <details>
 <summary>Features</summary>
+
 ### Homepage
 * The homepage consists of 3 sections, the hero image, customer reviews and gallery.
     * Hero Image
@@ -168,6 +169,7 @@ The project design is split into 3 parts: the appearance of the website, access 
 ## Testing
 <details>
     <summary>Tests Conducted</summary>
+
 ### Automated
 * The automated coverage report results at 88%. The remaining 12% of tests is covered under manual testing.
 
@@ -210,6 +212,7 @@ Mobile Bootstrap Modal – The modal appears and works correctly across all scre
 ## Deployment
 <details>
     <summary>Step-by-step</summary>
+
 Section | Number | Step | Code | Notes
 -------- | -------- | -------- | -------- | --------
 Heroku Setup and CLI | 1 | In Heroku.com, Create an account with Heroku.com | www.heroku.com |

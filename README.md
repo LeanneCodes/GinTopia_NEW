@@ -119,13 +119,13 @@ The project design is split into 3 parts: the appearance of the website, access 
 
         * It is also at this opportunity, where users can choose which mixologist they would like to be taught by. This list was curated in the Django Administration and pulled through to display on the user interface.
 
-![image](media/booking-form.png)
-(Booking for display)
+        ![image](media/booking-form.png)
+        (Booking for display)
 
         * The update booking form is the same layout, except the heading differs, as the action is different and the CTA says, “Update Booking”, rather than “Book Now”, when users are making a new booking.
 
-![image](media/update-booking.png)
-(Update booking form display)
+        ![image](media/update-booking.png)
+        (Update booking form display)
 
     * Mixologists
         * At the bottom of the booking forms, there is a display of the mixologists, who will be teaching the classes. This was done, so visitors could get an idea of who these people are and decide which mixologist they wanted for the class.
@@ -208,7 +208,7 @@ The project design is split into 3 parts: the appearance of the website, access 
 
 * All fields must be completed, except for the email field, which is optional. Usernames must be unique, so if a user’s name is taken, they may need to add some characters, such as additional letters, numbers to make their username unique. And the passwords the user inputs must be the same, for the form to be valid and submitted. 
 
-![image](media/signed-in)
+![image](media/signed-in.png)
 (Logged in, with confirmation that they have successfully logged in. They will also have access to book a class and view, edit and delete their booking (CRUD))
 
 * If the user chooses to sign out, they will be asked to confirm this action, once again defensive programming.
@@ -259,7 +259,7 @@ The project design is split into 3 parts: the appearance of the website, access 
 ### Manual
 Lanuague | Test | Outcome
 -------- | -------- | --------
-JavaScript | Enquiry Email via EmailJS | If all fields have been filled in and the data inputted is valid, the enquiry will submit successfully, with a status 200. A JavaScript alert will notify the user that the enquiry has been sent and the email associated with the EmailJS service will receive the enquiry.
+JavaScript | Enquiry Email via EmailJS | If all fields have been filled in and the data inputted is valid, the enquiry will submit successfully, with a status 200. A JavaScript alert will notify the user that the enquiry has been sent and the email associated with the EmailJS service will receive the enquiry. ![image](media/success-console.png)
 JavaScript | Owl Carousel | With the rotating carousel, we can visually see the cards rotate every 10 seconds, which was set on the script. This is so users have enough time to read each review before the next card appears.
 Python | Confirmation Alerts | When a user does an action, such as login, log out, create, edit or delete a booking, they are notified with an alert at the top of the page that their action has been successful. They are then redirected to the “Your Bookings” page, in case they want to edit any more bookings or delete booking(s).
 Django | Administration Backend | To show that the model strings return as either first name for the Mixologist model and user’s email for the reservation, please see the images below: Mixologists - First Name ![image](media/first-name.png) Reservation - User Email ![image](media/user-email.png)
@@ -283,8 +283,8 @@ Django | Administration Backend | To show that the model strings return as eithe
 ### Resolved
 Bugs | Solutions
 -------- | --------
-Modal - The purpose of including the modal on the “Your Bookings” page, was to act as a last defensive mechanism before a user confirmed that they wanted to delete their booking. Prior to including this modal, the correct booking was deleted. When including the modal, the booking at the top of the list was deleted, instead of the booking that should have been deleted. | Add solution
-Server 500 Error – Visitors, who were signing up for the first time, were experiencing a server 500 error when they included an email in the sign-up form. The error didn’t explain what the error was or tell them that their account was created regardless of the error. Meaning this left some users to not continue with the website, which meant no bookings for GinTopia. | Add solution
+Modal - The purpose of including the modal on the “Your Bookings” page, was to act as a last defensive mechanism before a user confirmed that they wanted to delete their booking. Prior to including this modal, the correct booking was deleted. When including the modal, the booking at the top of the list was deleted, instead of the booking that should have been deleted. | Replaced the Bootstrap standard template `data-bs-target="#exampleModal"` with `with data-bs-target=”#exampleModal-{{item.id}}”` and replace `div class="modal fade" id="exampleModal"` with `div class=”modal fade” id=”exampleModal-{{item.id}}”`. This additional piece of code told the website to target the specific item.id instead of deleting the top option in the bookings table.
+Server 500 Error – Visitors, who were signing up for the first time, were experiencing a server 500 error when they included an email in the sign-up form. The error didn’t explain what the error was or tell them that their account was created regardless of the error. Meaning this left some users to not continue with the website, which meant no bookings for GinTopia. | Include `EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"` into the settings.py file, so that the website will accept the email address inputted by the user and not disrupt the visitor journey on site.
 Bootstrap Buttons Expanding – During testing, when clicking on any button that had a Bootstrap class appended to it, the button would expand to two-thirds of the page before doing the action it was coded to do. | It was noticed that a Materialize Bootstrap CDN was added to the body on Base.html, which meant to conflicting design frameworks were trying to achieve different things. Given that Materialize was no longer needed, once it was removed, there were no more Bootstrap button issues.
 
 ### Unresolved
@@ -299,76 +299,76 @@ Mobile Bootstrap Modal – The modal appears and works correctly across all scre
 Section | Number | Step | Code | Notes
 -------- | -------- | -------- | -------- | --------
 Heroku Setup and CLI | 1 | In Heroku.com, Create an account with Heroku.com | www.heroku.com |
-Heroku Setup and CLI | 2 | In the terminal, if necessary, install the heroku CLI in Gitpod | curl https://cli-assets.heroku.com/install.sh (insert pipe key) sh | 
-Heroku Setup and CLI | 3 | Login to Heroku in Gitpod | heroku login -i |
+Heroku Setup and CLI | 2 | In the terminal, if necessary, install the heroku CLI in Gitpod | ![image](media/heroku-cli.png) | 
+Heroku Setup and CLI | 3 | Login to Heroku in Gitpod | `heroku login -i` |
 Heroku Setup and CLI | 4 | Enter your email, and password | |
-Installing Project Requirements | 1 | In the terminal, install Postgres | pip3 install psycopg2-binary | Note: Postgres is a way for your content to ‘talk’ to the database on the back end
-Installing Project Requirements | 2 | Install webserver | pip3 install gunicorn | Note: Replaces the development server once the app is deployed to Heroku
-Installing Project Requirements | 3 | Create a requirements file | pip3 freeze --local > requirements.txt | Note: creates a file to let heroku know which packages to install
-Creating the Heroku App | 1 | In the terminal, create the app | heroku apps:create APPNAME --region eu | Note: Give your app name a unique value e.g. APPNAME = rb-django-todo-app
+Installing Project Requirements | 1 | In the terminal, install Postgres | `pip3 install psycopg2-binary` | Note: Postgres is a way for your content to ‘talk’ to the database on the back end
+Installing Project Requirements | 2 | Install webserver | `pip3 install gunicorn` | Note: Replaces the development server once the app is deployed to Heroku
+Installing Project Requirements | 3 | Create a requirements file | `pip3 freeze --local > requirements.txt` | Note: creates a file to let heroku know which packages to install
+Creating the Heroku App | 1 | In the terminal, create the app | `heroku apps:create APPNAME --region eu` | Note: Give your app name a unique value e.g. APPNAME = rb-django-todo-app
 Creating a new Database on Heroku | 1 | In heroku.com, open the Resources Tab | |
 Creating a new Database on Heroku | 2 | Add Postgres to your app using search bar | Heroku Postgres |
 Creating a new Database on Heroku | 3 | Select Hobby Dev | |
 Creating a new Database on Heroku | 4 | Open  the settings tab | |
 Creating a new Database on Heroku | 5 | Click Reveal Config Vars | | Note: Heroku has created a Database_url variable
-Connecting our Remote Database | 1 | In the terminal, install a databse url package | pip3 install dj-database-url | Note: This package allows us to parse the database url that Heroku created.
-Connecting our Remote Database | 2 | Refreeze the requirements file | pip3 freeze --local > requirements.txt |
+Connecting our Remote Database | 1 | In the terminal, install a databse url package | `pip3 install dj-database-url` | Note: This package allows us to parse the database url that Heroku created.
+Connecting our Remote Database | 2 | Refreeze the requirements file | `pip3 freeze --local > requirements.txt` |
 Connecting our Remote Database | 3 | Get the url of the remote database | heroku config | Note: Displays the DATABASE URL FROM HEROKU in the terminal (used below) (Copy this value)
 Connecting our Remote Database | 4 | In your settings.py file, comment out the original DATABASE settings | | Note: Keep the original settings but comment them out.
-Connecting our Remote Database | 5 | Copy and Paste the DATABASE settings | DATABASES = {'default': dj_database_url.parse('postgres://DATABASE URL FROM HEROKU')} |
-Connecting our Remote Database | 6 | Import dj_database_url | | Note: Import at top of settings.py
-Connecting our Remote Database | 7 | In the terminal, run your migrations | python3 manage.py migrate | Note: If you get the error below while following these videos: django.db.utils.OperationalError: FATAL: role "somerandomletters" does not exist. Please run the following command in the terminal to fix it: unset PGHOSTADDR
+Connecting our Remote Database | 5 | Copy and Paste the DATABASE settings | `DATABASES = {'default': dj_database_url.parse('postgres://DATABASE URL FROM HEROKU')}` |
+Connecting our Remote Database | 6 | `import dj_database_url` | | Note: Import at top of settings.py
+Connecting our Remote Database | 7 | In the terminal, run your migrations | `python3 manage.py migrate` | Note: If you get the error below while following these videos: django.db.utils.OperationalError: FATAL: role "somerandomletters" does not exist. Please run the following command in the terminal to fix it: unset PGHOSTADDR
 Connecting our Remote Database | 8 | In Gitpod, create a new file, .gitignore | | Note: Lists any files we don’t want to include in the Github Repository
-Connecting our Remote Database | 9 | In gitignore, add files you want to ignore | *.sqlite3 __pycache__/ |
-Connecting our Remote Database | 10 | In the terminal, add your files to the local git repo | git add . | Note: Don’t forget the .
-Connecting our Remote Database | 11 | Commit the files with a meaningful message | git commit -m “prepared to deploy to Heroku” |
-Connecting our Remote Database | 12 | Push to remote repo | git push origin master | Note: If you get an error try ‘git push origin main’
-Attempting a First Deployment | 1 | In the terminal, deploy app to Heroku | git push heroku main |
-Attempting a First Deployment | 2 | Disable Collect Static | heroku config:set DISABLE_COLLECTSTATIC=1 | Note: Collect static usually collects static files such as CSS and JS. We don’t have any so we must disable it. Note: If you did have any static files, you would skip this step.
-Attempting a First Deployment | 3 | Deploy app to Heroku | git push heroku main |
-Attempting a First Deployment | 4 | Check the logs for errors | heroku logs --tail | Note: Use this command to check the deployment logs. You should see “Build Succeeded”
+Connecting our Remote Database | 9 | In gitignore, add files you want to ignore | `*.sqlite3 __pycache__/` |
+Connecting our Remote Database | 10 | In the terminal, add your files to the local git repo | `git add .` | Note: Don’t forget the .
+Connecting our Remote Database | 11 | Commit the files with a meaningful message | `git commit -m “prepared to deploy to Heroku”` |
+Connecting our Remote Database | 12 | Push to remote repo | `git push origin master` | Note: If you get an error try ‘git push origin main’
+Attempting a First Deployment | 1 | In the terminal, deploy app to Heroku | `git push heroku main` |
+Attempting a First Deployment | 2 | Disable Collect Static | `heroku config:set DISABLE_COLLECTSTATIC=1` | Note: Collect static usually collects static files such as CSS and JS. We don’t have any so we must disable it. Note: If you did have any static files, you would skip this step.
+Attempting a First Deployment | 3 | Deploy app to Heroku | `git push heroku main` |
+Attempting a First Deployment | 4 | Check the logs for errors | `heroku logs --tail` | Note: Use this command to check the deployment logs. You should see “Build Succeeded”
 Attempting a First Deployment | 5 | In Gitpod,  create a new file: Procfile | Procfile | Note: Place outside of any folders.
-Attempting a First Deployment | 6 | In Procfile, add gunicorn to Procfile | web: gunicorn django_todo.wsgi:application | Note: Tells gunicorn to run using our projects wsgi module.
-Attempting a First Deployment | 7 | In the terminal, add the Procfile to the git repo | git add Procfile |
-Attempting a First Deployment | 8 | Commit | git commit -m “Added Procfile” |
-Attempting a First Deployment | 9 | Push to heroku | git push heroku master main |
+Attempting a First Deployment | 6 | In Procfile, add gunicorn to Procfile | `web: gunicorn django_todo.wsgi:application` | Note: Tells gunicorn to run using our projects wsgi module.
+Attempting a First Deployment | 7 | In the terminal, add the Procfile to the git repo | `git add Procfile` |
+Attempting a First Deployment | 8 | Commit | `git commit -m “Added Procfile”` |
+Attempting a First Deployment | 9 | Push to heroku | `git push heroku master main` |
 Fix ALLOWED_HOSTS and Run the Project | 1 | In Heroku's Settings tab, click open app | |
 Fix ALLOWED_HOSTS and Run the Project | 2 | In the browser, copy the url | |
-Fix ALLOWED_HOSTS and Run the Project | 3 | In your settings.py file, paste in the url to ALLOWED_HOSTS value | ALLOWED_HOSTS = ['APP_NAME.herokuapp.com'] | Note: Make sure to delete the Https structure at the start of the url & the final ‘/’
+Fix ALLOWED_HOSTS and Run the Project | 3 | In your settings.py file, paste in the url to ALLOWED_HOSTS value | `ALLOWED_HOSTS = ['APP_NAME.herokuapp.com']` | Note: Make sure to delete the Https structure at the start of the url & the final ‘/’
 Fix ALLOWED_HOSTS and Run the Project | 4 | Add settings.py file to gitpod repo | add your settings.py to the local staging area |
-Fix ALLOWED_HOSTS and Run the Project | 5 | Commit | git commit -m “Fixed Allowed_hosts” |
-Fix ALLOWED_HOSTS and Run the Project | 6 | Push to heroku | git push heroku master main |
-Fix ALLOWED_HOSTS and Run the Project | 7 | Push to gitpod repo | git push origin master main | Note: Run the Heroku App and test
-Connecting Heroku to Github | 1 | In settings.py, add import os at the top with the other imports| import os | Note: Be sure to add, commit and push your repo to github & heroku once you have done this.
+Fix ALLOWED_HOSTS and Run the Project | 5 | Commit | `git commit -m “Fixed Allowed_hosts”` |
+Fix ALLOWED_HOSTS and Run the Project | 6 | Push to heroku | `git push heroku master main` |
+Fix ALLOWED_HOSTS and Run the Project | 7 | Push to gitpod repo | `git push origin master main` | Note: Run the Heroku App and test
+Connecting Heroku to Github | 1 | In settings.py, add import os at the top with the other imports| `import os` | Note: Be sure to add, commit and push your repo to github & heroku once you have done this.
 Connecting Heroku to Github | 2 | In heroku.com, open your app | |
 Connecting Heroku to Github | 3 | Open the Deploy tab | |
 Connecting Heroku to Github | 4 | Select a Deployment Method Option | Github - Connect to Github |
 Connecting Heroku to Github | 5 | Search for the Repo Name | | Note: You can find your Repo name using Github or Gitpod
 Connecting Heroku to Github | 6 | Click Connect | |
 Connecting Heroku to Github | 7 | Enable Automatic Deploys | | Note: This means that every time we push to the master branch on github it will automatically deploy to Heroku
-Connecting Heroku to Github | 8 | In your settings.py file, get the Secret Key value using an environment variable | SECRET_KEY = os.environ.get('SECRET_KEY', '---secretkeyvalue---’) | Note: This allows us to use an environment variable, or our initial secret key value.
-Connecting Heroku to Github | 9 | Replace the Heroku host value in ALLOWED_HOSTS | ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')] | Note: You should first copy the Heroku App url, so it can be used later.
-Connecting Heroku to Github | 10 | Replace the Database URL value in DATABASES | DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))} | Note: You can delete the database url
+Connecting Heroku to Github | 8 | In your settings.py file, get the Secret Key value using an environment variable | `SECRET_KEY = os.environ.get('SECRET_KEY', '---secretkeyvalue---’)` | Note: This allows us to use an environment variable, or our initial secret key value.
+Connecting Heroku to Github | 9 | Replace the Heroku host value in ALLOWED_HOSTS | `ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]` | Note: You should first copy the Heroku App url, so it can be used later.
+Connecting Heroku to Github | 10 | Replace the Database URL value in DATABASES | `DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}` | Note: You can delete the database url
 Connecting Heroku to Github | 11 | In heroku.com, click the settings tab | |
 Connecting Heroku to Github | 12 | Click Reveal Config Vars | |
 Connecting Heroku to Github | 13 | Add New Variable | HEROKU_HOSTNAME | Note: The Value is the heroku app URL value e.g. APPNAME.herokuapp.com
 Connecting Heroku to Github | 14 | Git add, commit & push | | Note: Because you have enabled Automatic Deploy, you just need to deploy to Github this time.
 Connecting Heroku to Github | 15 | In the browser, wait for the repo to deploy to Heroku | | Note: You can use the Heroku / Activity Tab to view the Build Log.
 Connecting Heroku to Github | 16 | Refresh the herokuapp in the browser. | |
-The Development Environment | 1 | In your settings.py, create a new development variable under import os | development = os.environ.get('DEVELOPMENT', False) |
-The Development Environment | 2 | Set Debug to development | DEBUG = development | Note: Replace DEBUG = True
-The Development Environment | 3 | Uncomment the DATABASES configuration and add an if statement | if development: DATABASES = {'default': {'ENGINE': 'django.db.backends.sqlite3', 'NAME': BASE_DIR / 'db.sqlite3',}} | Note: Make sure to add the correct DATABASES code to the if statement.
-The Development Environment | 4 | Add the database URL configuration for Heroku to an else statement | else: DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))} | Note: both the DATABASES configurations are already written in your code, you are just adding them to the if else statements.
+The Development Environment | 1 | In your settings.py, create a new development variable under import os | `development = os.environ.get('DEVELOPMENT', False)` |
+The Development Environment | 2 | Set Debug to development | `DEBUG = development` | Note: Replace DEBUG = True
+The Development Environment | 3 | Uncomment the DATABASES configuration and add an if statement | `if development: DATABASES = {'default': {'ENGINE': 'django.db.backends.sqlite3', 'NAME': BASE_DIR / 'db.sqlite3',}}` | Note: Make sure to add the correct DATABASES code to the if statement.
+The Development Environment | 4 | Add the database URL configuration for Heroku to an else statement | `else: DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}` | Note: both the DATABASES configurations are already written in your code, you are just adding them to the if else statements.
 The Development Environment | 5 | In https://gitpod.io/variables add a new environment variable | |
 The Development Environment | 6 | Set the development environment variable to True | | Name: DEVELOPMENT Value: True Scope: */*
 The Development Environment | 7 | Click the Workspaces Tab | | Note: Can leave the restart until you’ve completed the next steps
 The Development Environment | 8 | Restart your workspace | | Note: Click the 3 dots menu, and click stop
-The Development Environment | 9 | In settings.py, add a local host as an ALLOWED_HOST if development = True | if development: ALLOWED_HOSTS = ['localhost'] | Note: Don’t delete the original ALLOWED_HOSTS line.
-The Development Environment | 10 | Else use the HEROKU_HOSTNAME environment variable | else: ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')] |
-The Development Environment | 11 | In the terminal, add the git repo | git add . |
-The Development Environment | 12 | Commit | git commit -m “Setup Development Environment” |
-The Development Environment | 13 | Push to heroku | git push heroku master main |
-The SECRET_KEY | 1 | In settings.py, replace the default SECRET KEY with a blank string | SECRET_KEY = os.environ.get('SECRET_KEY', '') | Note: You can just delete the original secret key value
+The Development Environment | 9 | In settings.py, add a local host as an ALLOWED_HOST if development = True | `if development: ALLOWED_HOSTS = ['localhost']` | Note: Don’t delete the original ALLOWED_HOSTS line.
+The Development Environment | 10 | Else use the HEROKU_HOSTNAME environment variable | `else: ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]` |
+The Development Environment | 11 | In the terminal, add the git repo | `git add .` |
+The Development Environment | 12 | Commit | `git commit -m “Setup Development Environment”` |
+The Development Environment | 13 | Push to heroku | `git push heroku master main` |
+The SECRET_KEY | 1 | In settings.py, replace the default SECRET KEY with a blank string | `SECRET_KEY = os.environ.get('SECRET_KEY', '')` | Note: You can just delete the original secret key value
 The SECRET_KEY | 2 | In google.com, search for a Django Secret Key generator | e.g. https://miniwebtool.com/django-secret-key-generator/ | Note: If this example secret key generator webpage isn’t available, just google another one.
 The SECRET_KEY | 3 | In the secret key generator page, generate and copy a new Django Secret Key | |
 The SECRET_KEY | 4 | In https://gitpod.io/variables add a new environment variable | | Name: SECRET_KEY Value: Copy and Paste Scope: */*
@@ -377,9 +377,9 @@ The SECRET_KEY | 6 | In the Secret Key Generator page: e.g. https://miniwebtool.
 The SECRET_KEY | 7 | In heroku.com, click on the settings tab | |
 The SECRET_KEY | 8 | Reveal Config Variables | |
 The SECRET_KEY | 9 | Create new variable | Name: SECRET_KEY | Value: Copy and Paste. Note: Run server to view output
-The SECRET_KEY | 10 | In the terminal, add the git repo | git add . |
-The SECRET_KEY | 11 | Commit | git commit -m “Removed Secret Key” |
-The SECRET_KEY | 12 | Push to heroku | git push origin master main | Note: Run server to view output
+The SECRET_KEY | 10 | In the terminal, add the git repo | `git add .` |
+The SECRET_KEY | 11 | Commit | `git commit -m “Removed Secret Key”` |
+The SECRET_KEY | 12 | Push to heroku | `git push origin master main` | Note: Run server to view output
 </details>
 
 ## Technologies Used

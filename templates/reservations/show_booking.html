@@ -27,9 +27,7 @@
           <td>{{ item.for_how_many }}</td>
           <td>{{ item.mixologist }}</td>
           <td>
-            <a href="/update/{{ item.id }}">
-              <button class="update-btn"><i class="fa fa-edit"></i> Edit</button>
-            </a>
+            <a href="/update/{{ item.id }}" class="update-btn"><i class="fa fa-edit"></i> Edit</a>
           </td>
           <td>
             <!-- Button trigger modal -->
@@ -49,9 +47,7 @@
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="gt-btn-dark" data-bs-dismiss="modal">Close</button>
-                    <a href="/delete/{{ item.id }}">
-                      <button type="button" class="gt-btn-success">Yes, Delete</button>
-                    </a>
+                    <a href="/delete/{{ item.id }}" class="gt-btn-success">Yes, Delete</a>
                   </div>
                 </div>
               </div>

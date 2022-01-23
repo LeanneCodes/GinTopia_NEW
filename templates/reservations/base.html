@@ -22,10 +22,8 @@
     crossorigin="anonymous">
   </script>
   <!-- Emailjs -->
-  <script type="text/javascript"
-    src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js">
-  </script>
-  <script type="text/javascript">
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
   (function(){
       emailjs.init("user_OAwOOo2rDsu6jWBOML5qZ");
   })();
@@ -69,7 +67,7 @@
         </ul>
           <span class="navbar-text">
               <a class="nav-link sign-up sign-up-level" href="{% url 'account_signup' %}">Sign Up</a>
-              <p class="nav-link sign-up"> / </p>
+              <span class="nav-link sign-up"> / </span>
               <a class="nav-link sign-up sign-up-level" href="{% url 'account_login' %}">Login</a>
           </span>
         {% endif %}
@@ -101,7 +99,7 @@
   <!-- /.gintopia container -->
   <hr>
   <!-- Footer -->
-  <section>
+  <div>
     <footer class="text-center text-white" style="background-color: #d3b488;">
       <!-- Social links grid container -->
       <div class="container p-4 pb-0">
@@ -118,7 +116,7 @@
       <!-- /.social links grid container -->
       <hr>
       <!-- Section: CTA -->
-      <section class="">
+      <div>
         <p class="d-flex justify-content-center align-items-center">
           <span class="me-3">Book a class with us!</span>
           {% if user.is_authenticated %}
@@ -127,16 +125,15 @@
           <a class="gt-btn-light" href="{% url 'account_signup' %}">Join Us</a>
           {% endif %}
         </p>
-      </section>
-      <!-- /.section: CTA -->
       </div>
+      <!-- /.section: CTA -->
       <!-- Copyright -->
       <div class="text-center p-3" style="background-color: #967950;">© Copyright: <span id="copyright"></span>
         <a class="text-white" href="{% url 'index' %}">GinTopia.com</a>
       </div>
       <!-- /.copyright -->
     </footer>
-  </section>
+  </div>
   <!-- /.footer -->
   <!-- Bootstrap core JavaScript -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

@@ -3,7 +3,7 @@
 {% block content %}
 
 {% load widget_tweaks %}
-  <section>
+  <div>
     <div id="booking" class="section-booking">
       <div class="section-center">
         <div class="container">
@@ -15,7 +15,7 @@
             </div>
             <div class="col-md-6 col-md-offset-1">
               <div class="booking-form">
-                <form id="form" action="" method="POST">
+                <form id="form" method="POST">
                   {% csrf_token %}
                   <div class="row">
                     <div class="col-md-6">
@@ -49,7 +49,7 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label class="label">Age</label>
-                        {% render_field form.age class="form-control" min="18" %}
+                        {% render_field form.age class="form-control" min="18" max="100" %}
                       </div>
                     </div>
                     <div class="col-md-6">
@@ -88,7 +88,7 @@
                     </div>
                   </div>
                   <div class="form-btn">
-                    <input type="submit" id="submit" class="submit-btn" value="Update Booking">
+                    <input type="submit" id="submit" class="submit-btn" value="Book Now">
                   </div>
                   <br>
                   <div>
@@ -102,68 +102,68 @@
         </div>
       </div>
     </div>
-  </section>
+  </div>
   <hr>
   <section>
     <div id="bartender-heading">
-      <h3>Our Mixologists</h3>
+      <h3>Meet Your Mixologists</h3>
       <p>These lovely mixologists, have a combined experience of 34 years, delivering fantastically-made cocktails, but most of all, specialising in gin-cocktails.<br>When you book a class with us, you will be taught by one of them and learn so much from their years of experience.</p>
     </div>
   </section>
-  <section class="bartender-intro">
+  <div class="bartender-intro">
     <br>
     <div class="container">
       <div class="row">
         <div class="bartenders">
-          <span><img class="circle" src="https://res.cloudinary.com/dxa3wjudh/image/upload/v1641760031/GinTopia%20Images/bartender-1_1_jnxyws.png" alt="bartender 1"><br><p class="bartender-info"><strong>Jamie, 27</strong><br>5 years of experience<br>Favourite gin cocktail:<br>Blackberry Gin</p></span>
-          <span><img class="circle" src="https://res.cloudinary.com/dxa3wjudh/image/upload/v1641760036/GinTopia%20Images/bartender-2_kasjim.png" alt="bartender 2"><br><p class="bartender-info"><strong>Sarah, 29</strong><br>4 years of experience<br>Favourite gin cocktail:<br>Gimlet Gin</p></span>
-          <span><img class="circle" src="https://res.cloudinary.com/dxa3wjudh/image/upload/v1641760040/GinTopia%20Images/bartender-3_h3kzqa.png" alt="bartender 3"><br><p class="bartender-info"><strong>José, 33</strong><br>10 years of experience<br>Favourite gin cocktail:<br>Gin Fizz</p></span>
-          <span><img class="circle" src="https://res.cloudinary.com/dxa3wjudh/image/upload/v1641760042/GinTopia%20Images/bartender-4_abytj3.png" alt="bartender 4"><br><p class="bartender-info"><strong>Laurel, 30</strong><br>6 years of experience<br>Favourite gin cocktail:<br>Classic Gin Martini</p></span>
-          <span><img class="circle" src="https://res.cloudinary.com/dxa3wjudh/image/upload/v1641760011/GinTopia%20Images/bartender-5_1_yscjcu.png" alt="bartender 5"><br><p class="bartender-info"><strong>Lawrence, 31</strong><br>5 years of experience<br>Favourite gin cocktail:<br>Gin Sling</p></span>
-          <span><img class="circle" src="https://res.cloudinary.com/dxa3wjudh/image/upload/v1641760044/GinTopia%20Images/bartender-6_qyxoqv.png" alt="bartender 6"><br><p class="bartender-info"><strong>Tolu, 28</strong><br>4 years of experience<br>Favourite gin cocktail:<br>Tom Collins</p></span>
+          <span><img class="circle" src="https://res.cloudinary.com/dxa3wjudh/image/upload/v1641760031/GinTopia%20Images/bartender-1_1_jnxyws.png" alt="bartender 1"><br><span class="bartender-info"><strong>Jamie, 27</strong><br>5 years of experience<br>Favourite gin cocktail:<br>Blackberry Gin</span></span>
+          <span><img class="circle" src="https://res.cloudinary.com/dxa3wjudh/image/upload/v1641760036/GinTopia%20Images/bartender-2_kasjim.png" alt="bartender 2"><br><span class="bartender-info"><strong>Sarah, 29</strong><br>4 years of experience<br>Favourite gin cocktail:<br>Gimlet Gin</span></span>
+          <span><img class="circle" src="https://res.cloudinary.com/dxa3wjudh/image/upload/v1641760040/GinTopia%20Images/bartender-3_h3kzqa.png" alt="bartender 3"><br><span class="bartender-info"><strong>José, 33</strong><br>10 years of experience<br>Favourite gin cocktail:<br>Gin Fizz</span></span>
+          <span><img class="circle" src="https://res.cloudinary.com/dxa3wjudh/image/upload/v1641760042/GinTopia%20Images/bartender-4_abytj3.png" alt="bartender 4"><br><span class="bartender-info"><strong>Laurel, 30</strong><br>6 years of experience<br>Favourite gin cocktail:<br>Classic Gin Martini</span></span>
+          <span><img class="circle" src="https://res.cloudinary.com/dxa3wjudh/image/upload/v1641760011/GinTopia%20Images/bartender-5_1_yscjcu.png" alt="bartender 5"><br><span class="bartender-info"><strong>Lawrence, 31</strong><br>5 years of experience<br>Favourite gin cocktail:<br>Gin Sling</span></span>
+          <span><img class="circle" src="https://res.cloudinary.com/dxa3wjudh/image/upload/v1641760044/GinTopia%20Images/bartender-6_qyxoqv.png" alt="bartender 6"><br><span class="bartender-info"><strong>Tolu, 28</strong><br>4 years of experience<br>Favourite gin cocktail:<br>Tom Collins</span></span>
         </div>
       </div>
     </div>
-  </section>
-  <section id="bartender-slideshow">
+  </div>
+  <div id="bartender-slideshow">
     <div id="carouselBartenderIndicators" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselBartenderIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselBartenderIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselBartenderIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        <button type="button" data-bs-target="#carouselBartenderIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-        <button type="button" data-bs-target="#carouselBartenderIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
-        <button type="button" data-bs-target="#carouselBartenderIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
-      </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="https://res.cloudinary.com/dxa3wjudh/image/upload/v1641760005/GinTopia%20Images/bar-1_1_rt0j8j.png" class="d-block w-100" alt="Jamie">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselBartenderIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselBartenderIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselBartenderIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselBartenderIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          <button type="button" data-bs-target="#carouselBartenderIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+          <button type="button" data-bs-target="#carouselBartenderIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
         </div>
-        <div class="carousel-item">
-          <img src="https://res.cloudinary.com/dxa3wjudh/image/upload/v1641760001/GinTopia%20Images/bar-2_1_d1lfau.png" class="d-block w-100" alt="Sarah">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://res.cloudinary.com/dxa3wjudh/image/upload/v1641760005/GinTopia%20Images/bar-1_1_rt0j8j.png" class="d-block w-100" alt="Jamie">
+          </div>
+          <div class="carousel-item">
+            <img src="https://res.cloudinary.com/dxa3wjudh/image/upload/v1641760001/GinTopia%20Images/bar-2_1_d1lfau.png" class="d-block w-100" alt="Sarah">
+          </div>
+          <div class="carousel-item">
+            <img src="https://res.cloudinary.com/dxa3wjudh/image/upload/v1641759979/GinTopia%20Images/bar-3_1_r7zxeu.png" class="d-block w-100" alt="José">
+          </div>
+          <div class="carousel-item">
+            <img src="https://res.cloudinary.com/dxa3wjudh/image/upload/v1641760005/GinTopia%20Images/bar-4_1_prbhng.png" class="d-block w-100" alt="Laurel">
+          </div>
+          <div class="carousel-item">
+            <img src="https://res.cloudinary.com/dxa3wjudh/image/upload/v1641760005/GinTopia%20Images/bar-5_1_kiqxlt.png" class="d-block w-100" alt="Lawrence">
+          </div>
+          <div class="carousel-item">
+            <img src="https://res.cloudinary.com/dxa3wjudh/image/upload/v1641760027/GinTopia%20Images/bar-6_mycgra.png" class="d-block w-100" alt="Tolu">
+          </div>
         </div>
-        <div class="carousel-item">
-          <img src="https://res.cloudinary.com/dxa3wjudh/image/upload/v1641759979/GinTopia%20Images/bar-3_1_r7zxeu.png" class="d-block w-100" alt="José">
-        </div>
-        <div class="carousel-item">
-          <img src="https://res.cloudinary.com/dxa3wjudh/image/upload/v1641760005/GinTopia%20Images/bar-4_1_prbhng.png" class="d-block w-100" alt="Laurel">
-        </div>
-        <div class="carousel-item">
-          <img src="https://res.cloudinary.com/dxa3wjudh/image/upload/v1641760005/GinTopia%20Images/bar-5_1_kiqxlt.png" class="d-block w-100" alt="Lawrence">
-        </div>
-        <div class="carousel-item">
-          <img src="https://res.cloudinary.com/dxa3wjudh/image/upload/v1641760027/GinTopia%20Images/bar-6_mycgra.png" class="d-block w-100" alt="Tolu">
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselBartenderIndicators" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselBartenderIndicators" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselBartenderIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselBartenderIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
     </div>
-  </section>
-
+  </div>
+  
 {% endblock %}

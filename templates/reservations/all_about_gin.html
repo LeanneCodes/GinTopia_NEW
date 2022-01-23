@@ -10,7 +10,7 @@
           <!-- looping through the gin.json file to populate the below -->
           {% for cocktail in data %}
             <div class="row">
-              <div class="col-md-4"><img src="{{ cocktail.image_source }}" alt="" width="100%" height="auto"></div>
+              <div class="col-md-4"><img class="gin-sizing" src="{{ cocktail.image_source }}" alt=""></div>
               <div class="col-md-8">
                 <p class="gin-rank">{{ cocktail.position }}</p>
                 <h4>{{ cocktail.name }}</h4>

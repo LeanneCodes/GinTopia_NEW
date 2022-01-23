@@ -388,6 +388,11 @@ body h4,h5,h6 {
     font-size: 2.5em;
 }
 
+.gin-sizing {
+    width: 100%;
+    height: auto;
+}
+
 /* Book a Class */
 .section-booking {
 	position: relative;
@@ -570,6 +575,8 @@ body h4,h5,h6 {
     background-color: white;
     color: #967950;
     box-shadow: none;
+    padding: 4px 6px;
+    text-decoration: none;
 }
 
 .update-btn:hover {
@@ -579,6 +586,8 @@ body h4,h5,h6 {
     background-color: #967950;
     color: white;
     box-shadow: none;
+    padding: 4px 6px;
+    text-decoration: none;
 }
 
 .delete-btn {
@@ -671,6 +680,11 @@ body h4,h5,h6 {
 
 #map {
     min-height: 500px;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
 }
 
 /* for 4k screens size from 2560px wide and down */

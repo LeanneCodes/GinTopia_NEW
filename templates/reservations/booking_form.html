@@ -3,7 +3,7 @@
 {% block content %}
 
 {% load widget_tweaks %}
-  <section>
+  <div>
     <div id="booking" class="section-booking">
       <div class="section-center">
         <div class="container">
@@ -16,7 +16,7 @@
             </div>
             <div class="col-md-6 col-md-offset-1">
               <div class="booking-form">
-                <form id="form" action="" method="POST">
+                <form id="form" method="POST">
                   {% csrf_token %}
                   <div class="row">
                     <div class="col-md-6">
@@ -103,7 +103,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </div>
   <hr>
   <section>
     <div id="bartender-heading">
@@ -111,22 +111,22 @@
       <p>These lovely mixologists, have a combined experience of 34 years, delivering fantastically-made cocktails, but most of all, specialising in gin-cocktails.<br>When you book a class with us, you will be taught by one of them and learn so much from their years of experience.</p>
     </div>
   </section>
-  <section class="bartender-intro">
+  <div class="bartender-intro">
     <br>
     <div class="container">
       <div class="row">
         <div class="bartenders">
-          <span><img class="circle" src="https://res.cloudinary.com/dxa3wjudh/image/upload/v1641760031/GinTopia%20Images/bartender-1_1_jnxyws.png" alt="bartender 1"><br><p class="bartender-info"><strong>Jamie, 27</strong><br>5 years of experience<br>Favourite gin cocktail:<br>Blackberry Gin</p></span>
-          <span><img class="circle" src="https://res.cloudinary.com/dxa3wjudh/image/upload/v1641760036/GinTopia%20Images/bartender-2_kasjim.png" alt="bartender 2"><br><p class="bartender-info"><strong>Sarah, 29</strong><br>4 years of experience<br>Favourite gin cocktail:<br>Gimlet Gin</p></span>
-          <span><img class="circle" src="https://res.cloudinary.com/dxa3wjudh/image/upload/v1641760040/GinTopia%20Images/bartender-3_h3kzqa.png" alt="bartender 3"><br><p class="bartender-info"><strong>José, 33</strong><br>10 years of experience<br>Favourite gin cocktail:<br>Gin Fizz</p></span>
-          <span><img class="circle" src="https://res.cloudinary.com/dxa3wjudh/image/upload/v1641760042/GinTopia%20Images/bartender-4_abytj3.png" alt="bartender 4"><br><p class="bartender-info"><strong>Laurel, 30</strong><br>6 years of experience<br>Favourite gin cocktail:<br>Classic Gin Martini</p></span>
-          <span><img class="circle" src="https://res.cloudinary.com/dxa3wjudh/image/upload/v1641760011/GinTopia%20Images/bartender-5_1_yscjcu.png" alt="bartender 5"><br><p class="bartender-info"><strong>Lawrence, 31</strong><br>5 years of experience<br>Favourite gin cocktail:<br>Gin Sling</p></span>
-          <span><img class="circle" src="https://res.cloudinary.com/dxa3wjudh/image/upload/v1641760044/GinTopia%20Images/bartender-6_qyxoqv.png" alt="bartender 6"><br><p class="bartender-info"><strong>Tolu, 28</strong><br>4 years of experience<br>Favourite gin cocktail:<br>Tom Collins</p></span>
+          <span><img class="circle" src="https://res.cloudinary.com/dxa3wjudh/image/upload/v1641760031/GinTopia%20Images/bartender-1_1_jnxyws.png" alt="bartender 1"><br><span class="bartender-info"><strong>Jamie, 27</strong><br>5 years of experience<br>Favourite gin cocktail:<br>Blackberry Gin</span></span>
+          <span><img class="circle" src="https://res.cloudinary.com/dxa3wjudh/image/upload/v1641760036/GinTopia%20Images/bartender-2_kasjim.png" alt="bartender 2"><br><span class="bartender-info"><strong>Sarah, 29</strong><br>4 years of experience<br>Favourite gin cocktail:<br>Gimlet Gin</span></span>
+          <span><img class="circle" src="https://res.cloudinary.com/dxa3wjudh/image/upload/v1641760040/GinTopia%20Images/bartender-3_h3kzqa.png" alt="bartender 3"><br><span class="bartender-info"><strong>José, 33</strong><br>10 years of experience<br>Favourite gin cocktail:<br>Gin Fizz</span></span>
+          <span><img class="circle" src="https://res.cloudinary.com/dxa3wjudh/image/upload/v1641760042/GinTopia%20Images/bartender-4_abytj3.png" alt="bartender 4"><br><span class="bartender-info"><strong>Laurel, 30</strong><br>6 years of experience<br>Favourite gin cocktail:<br>Classic Gin Martini</span></span>
+          <span><img class="circle" src="https://res.cloudinary.com/dxa3wjudh/image/upload/v1641760011/GinTopia%20Images/bartender-5_1_yscjcu.png" alt="bartender 5"><br><span class="bartender-info"><strong>Lawrence, 31</strong><br>5 years of experience<br>Favourite gin cocktail:<br>Gin Sling</span></span>
+          <span><img class="circle" src="https://res.cloudinary.com/dxa3wjudh/image/upload/v1641760044/GinTopia%20Images/bartender-6_qyxoqv.png" alt="bartender 6"><br><span class="bartender-info"><strong>Tolu, 28</strong><br>4 years of experience<br>Favourite gin cocktail:<br>Tom Collins</span></span>
         </div>
       </div>
     </div>
-  </section>
-  <section id="bartender-slideshow">
+  </div>
+  <div id="bartender-slideshow">
     <div id="carouselBartenderIndicators" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselBartenderIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -165,6 +165,6 @@
           <span class="visually-hidden">Next</span>
         </button>
     </div>
-  </section>
+  </div>
   
 {% endblock %}

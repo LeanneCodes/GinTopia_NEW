@@ -303,10 +303,18 @@ The SECRET_KEY | 12 | Push to heroku | git push origin master main | Note: Run s
 ## Credits
 
 ### Code
-* abc
+* Footer design from https://mdbootstrap.com
+* Responsive image gallery on the homepage from YouTube
+* Owl carousel from https://freefrontend/bootstrap-testimonials/
+* Booking form design from https://colorlib.com
+* Bootstrap components for page structure
 
 ### Images
-* abc
+* Unsplash.com
+* Gin bottle images from Google
+
+### Content
+* All About Gin content derives from Esquire's page on best gins
 
 ### Acknowledgements
 * My mentor Rahul for his ongoing support and feedback

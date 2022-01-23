@@ -43,9 +43,9 @@ The project design is split into 3 parts: the appearance of the website, access 
 * If a visitor does not create an account, they have access to fewer pages, specifically the homepage, “All About Gin” page, “Contact Us” page as well as the opportunity to sign up at the top right-hand corner in the navigation bar.
 
 * Additionally, if a user hasn’t created an account nor logged in, their CTA buttons will differ to those who are logged in. 
-    * Logged in CTA
-    ![image](book-now-cta-small.png)
-    * Not logged in CTA
+
+* Logged in CTA ![image](media/book-now-cta-small.png)
+* Not logged in CTA ![image](media/join-us-cta-small.png)
 
 ### Database Structure
 * The database is made up of two models, a Reservation model and a Mixologist model. It was created like this for two reasons.
@@ -67,13 +67,27 @@ The project design is split into 3 parts: the appearance of the website, access 
         * The hero image, which is using Bootstrap’s jumbotron component, is a great way to capture a user’s attention but also direct them to the site’s main goal of booking a class.
 
         * The title, “Love Gin?” was done like this, so a visitor would know instantly that this website is about gin. Secondly, the subtitle text below, gives more information to the visitor that there is an opportunity to make gin cocktails with GinTopia.
+        ![image](media/homepage-logged-in.png)
+        (This is the logged in view, as the CTA says Book Now)
+        ![image](media/homepage-not-logged-in.png)
+        (This is the logged-out view, as the CTA says Join Us. There is also a disclaimer stating that users need to create an account before they can book a class, so they are aware of the steps they need to take.)
 
         * The mobile hero image is different due to the yellow gin image not being clear what the image is on smaller devices. It was decided to use a background of a clear G&T drink that has decorative leaves and lemon in the glass. The dark contrast is consistent with the website’s theme, and it allows the overlaying text to be clear to the visitor. 
+        
+        ![image](media/mobile-hero-image-logged-in.png)
+        
+        (Logged in view)
+
+        ![image](media/mobile-hero-image-logged-out.png)
+        
+        (Logged out view)
 
     * Customer Reviews
         * The customer reviews are displayed in an owl-carousel format, so each card pops forward when it’s in the center. This is done to draw attention to the review, before the next one appears.
 
         * Including reviews is a good way to entice people to book a class, as they can see other people have enjoyed themselves and willing to come back, which is great for business.
+
+        ![image](media/customer-reviews.png)
 
     * Gallery
         * The gallery is included to show users the type of dark and alluring setting GinTopia has, but also an example of some of the drinks they will get to make and some of the gin we will use in the cocktails.
@@ -82,8 +96,15 @@ The project design is split into 3 parts: the appearance of the website, access 
 
         * Depending the screen size, a visitor is viewing this website on, they will either see an array of 4 images of a slideshow on a small device, consisting of the same images.
 
+        ![image](media/gallery-desktop.png)
+        (Large tablet/desktop view)
+        ![image](media/slideshow.png)
+        (Small tablet/mobile view)
+
 ### All About Gin
 * This page was designed so that visitors could be informed about the different gin categories there are and what gin brands/flavours rank the best in their category. There are 10 gins listed on this page, each with the name of the bottle, the alcohol percentage volume, the price, a button leading to Amazon, where they can buy the bottle and a description of the gin.
+
+![image](media/all-about-gin.png)
 
 ### Book A Class / Update Booking
 * These pages consist of two parts; the booking form and an introduction to the mixologists, who will be teaching the classes.
@@ -98,10 +119,22 @@ The project design is split into 3 parts: the appearance of the website, access 
 
         * It is also at this opportunity, where users can choose which mixologist they would like to be taught by. This list was curated in the Django Administration and pulled through to display on the user interface.
 
+![image](media/booking-form.png)
+(Booking for display)
+
         * The update booking form is the same layout, except the heading differs, as the action is different and the CTA says, “Update Booking”, rather than “Book Now”, when users are making a new booking.
+
+![image](media/update-booking.png)
+(Update booking form display)
 
     * Mixologists
         * At the bottom of the booking forms, there is a display of the mixologists, who will be teaching the classes. This was done, so visitors could get an idea of who these people are and decide which mixologist they wanted for the class.
+
+![image](media/mixologists.png)
+(Large tablets/desktop view)
+
+![image](media/mixologists-slideshow.png)
+(Small tablets/mobile view – a slideshow of the mixologists and snippet of info about them)
 
 ### Your Bookings
 * When a book is successful, the user is redirected to the “Your Bookings” page.
@@ -110,15 +143,32 @@ The project design is split into 3 parts: the appearance of the website, access 
 
 * When they arrive on the page, they are notified with a success alert that their booking was created successfully.
 
+![image](media/successful-booking.png)
+
 * Bookings are listed in order of date, so upcoming bookings are listed at the top. Each booking shows important details the user may want to edit. Such as, email and phone number for contacting purposes and then the core booking information, such as date and time of the booking, the number of people attending and the mixologist.
+
+![image](media/bookings-table.png)
 
 * At the end of each booking row, the user has the opportunity to edit or delete the booking.
 
 * If they choose to edit the booking, they will be redirected to the update booking page and be able to fill the form in. Once submitted, the old booking row will be updated with the new inputs and the user will be notified that the update was successful. As you can see in the image below, we have updated the top booking and changed the class time to 1pm and 4 people are now attending.
 
+![image](media/updated-booking-successfully.png)
+
 * If the user chooses to delete a booking, this can be done in two steps. First, they will click the delete button. Then a modal will pop up and ask if they’re sure they want to delete the booking. If they click yes, the booking is deleted, and they will receive an alert that this action was processed successfully. If they click close, then no booking has been deleted. This modal was implemented as defensive programming, so no accidental deletions could be made without the user confirming their actions.
 
+![image](media/delete-booking.png)
+(Step 1 – Decide which booking you want to delete and then click “Delete”)
+
+![image](media/modal.png)
+(Step 2 – User chooses if they want to proceed with deleting the booking or cancel it by clicking “Close”. If they choose to proceed, then they will click “Yes, Delete”.)
+
+![image](media/booking-deleted-successfully.png)
+(Selected booking has been deleted and the user has been notified of this via a success alert).
+
 * Lastly, if the user would like to add another booking, instead of clicking on the navigation tab, they can scroll to “Add a booking” and the user will be directed to the booking form page.
+
+![image](media/add-a-booking.png)
 
 ### Contact Us
 * This page is great for visitors who have any questions or want to make requests for their booking, such as “Can I host a private event from 5pm-9pm?”
@@ -127,31 +177,61 @@ The project design is split into 3 parts: the appearance of the website, access 
 
 * When a user submits their enquiry, an alert box pops up confirming that their enquiry was sent successfully.
 
+![image](media/submit-enquiry.png)
+
 * For testing purposes, the developer can open the devtools and check the console if the enquiry was sent successfully or not.
 
 * In our JavaScript code, it’s setup so if the booking is successful, the word “SUCCESS” would be visible. If unsuccessful, “FAILED”, would appear.
+
+![image](media/success-console.png)
 
 * EmailJS was the service used to create a working contact form, which would allow admins or customer support to receive enquiries and be able to respond to users, given that they would need to supply their email address.
 
 * With the account used to receive these enquiries, you can see the email come through in the below image.
 
+![image](media/enquiry-sent.png)
+
 * The Google map is hosted from the Google Map API. For the purpose of this project, an existing place was chosen, so it was clear to the user what roads are nearby, which can help with finding a place. The user also has options to use the zoom feature or see the terrain version of the map, if this option suits them better to find GinTopia.
+
+![image](media/animated-map.png)
+![image](media/terrain-map.png)
 
 ### Sign-Up / Login / Logout
 * Depending on which user access they have, they will see different navigation links.
 
+![image](media/logged-out-navbar.png)
+(No user account created yet. Only have access to 3 pages besides the sign up/login pages)
+
 * When the user clicks to sign up and create an account. They will see the below form.
+
+![image](media/sign-up-form.png)
 
 * All fields must be completed, except for the email field, which is optional. Usernames must be unique, so if a user’s name is taken, they may need to add some characters, such as additional letters, numbers to make their username unique. And the passwords the user inputs must be the same, for the form to be valid and submitted. 
 
+![image](media/signed-in)
+(Logged in, with confirmation that they have successfully logged in. They will also have access to book a class and view, edit and delete their booking (CRUD))
+
 * If the user chooses to sign out, they will be asked to confirm this action, once again defensive programming.
+
+![image](media/sign-out.png)
 
 * If the user clicks “Sign Out”, they will be redirected to the homepage, with a success alert, stating they have signed out.
 
+![image](media/sign-out-success.png)
+
 * Once the user has created an account, if they choose to come back to the site, after they have logged out, they can click on the “Login” button and be directed to the below page. It’s likely their data would be stored already in the input fields, for an easier log in experience. They have the option to click “Remember Me”, if they wish for a smoother login process in the future.
+
+![image](media/log-in.png)
 
 ### Footer
 * The footer, which is consistently display across every page is there to serve two functions. Direct users to GinTopia’s social media pages and encourage users to either book a class or create an account depending on their logged in status.
+
+![image](media/footer-not-logged-in.png)
+(Logged out or not created an account yet)
+
+![image](media/footer-logged-in.png)
+(Logged in – can book a class straightaway)
+
 </details>
 
 ## Future Implementations
@@ -174,13 +254,15 @@ The project design is split into 3 parts: the appearance of the website, access 
 ### Automated
 * The automated coverage report results at 88%. The remaining 12% of tests is covered under manual testing.
 
+![image](media/coverage-report.png)
+
 ### Manual
 Lanuague | Test | Outcome
 -------- | -------- | --------
 JavaScript | Enquiry Email via EmailJS | If all fields have been filled in and the data inputted is valid, the enquiry will submit successfully, with a status 200. A JavaScript alert will notify the user that the enquiry has been sent and the email associated with the EmailJS service will receive the enquiry.
 JavaScript | Owl Carousel | With the rotating carousel, we can visually see the cards rotate every 10 seconds, which was set on the script. This is so users have enough time to read each review before the next card appears.
 Python | Confirmation Alerts | When a user does an action, such as login, log out, create, edit or delete a booking, they are notified with an alert at the top of the page that their action has been successful. They are then redirected to the “Your Bookings” page, in case they want to edit any more bookings or delete booking(s).
-Django | Administration Backend | To show that the model strings return as either first name for the Mixologist model and user’s email for the reservation, please see the images below:
+Django | Administration Backend | To show that the model strings return as either first name for the Mixologist model and user’s email for the reservation, please see the images below: Mixologists - First Name ![image](media/first-name.png) Reservation - User Email ![image](media/user-email.png)
 
 ### Validation Checks
 * HTML W3C Validator – No errors found
@@ -208,7 +290,7 @@ Bootstrap Buttons Expanding – During testing, when clicking on any button that
 ### Unresolved
 Bugs | Unsolved
 -------- | --------
-Mobile Bootstrap Modal – The modal appears and works correctly across all screen devices via devtools and works outside of devtools, except for iPhones, where the modal grey backdrop appears, but the modal itself is partially in view, or doesn’t show at all. | Currently, no solution to this problem, but it does function correctly on devtools with the dimensions specified for an iPhone 12 Pro.
+Mobile Bootstrap Modal – The modal appears and works correctly across all screen devices via devtools and works outside of devtools, except for iPhones, where the modal grey backdrop appears, but the modal itself is partially in view, or doesn’t show at all. | Currently, no solution to this problem, but it does function correctly on devtools with the dimensions specified for an iPhone 12 Pro. ![image](media/iphone-delete.png) ![image](media/iphone-successful.png)
 
 ## Deployment
 <details>

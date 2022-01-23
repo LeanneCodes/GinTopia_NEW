@@ -269,7 +269,7 @@ Lanuague | Test | Outcome
 JavaScript | Enquiry Email via EmailJS | If all fields have been filled in and the data inputted is valid, the enquiry will submit successfully, with a status 200. A JavaScript alert will notify the user that the enquiry has been sent and the email associated with the EmailJS service will receive the enquiry. ![image](media/success-console.png)
 JavaScript | Owl Carousel | With the rotating carousel, we can visually see the cards rotate every 10 seconds, which was set on the script. This is so users have enough time to read each review before the next card appears.
 Python | Confirmation Alerts | When a user does an action, such as login, log out, create, edit or delete a booking, they are notified with an alert at the top of the page that their action has been successful. They are then redirected to the “Your Bookings” page, in case they want to edit any more bookings or delete booking(s).
-Django | Administration Backend | To show that the model strings return as either first name for the Mixologist model and user’s email for the reservation, please see the images below: Mixologists - First Name ![image](media/first-name.png) Reservation - User Email ![image](media/user-email.png)
+Django | Administration Backend | To show that the model strings return as either first name for the Mixologist model and user’s email for the reservation, please see the images below: Mixologists - First Name ![image](media/first-name.png) Reservation - User Email ![image](media/user-email.png) Admin View ![image](media/string.png)
 
 ### Validation Checks
 * HTML W3C Validator – No errors found

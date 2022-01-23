@@ -12,7 +12,7 @@ User Story | Project Goals
 -------- | --------
 As a customer, I can edit and delete my bookings, so that I can be in control of my bookings. | This was achieved in the “Your Bookings” page, where a user can select a booking and choose whether to edit or delete any booking that they have made.
 As a developer, I can limit access to certain pages, so that only logged in users can book a class and view their bookings. | This was achieved using an “if statement” in the navigation section. If a user was logged in they would have access to all pages within GinTopia. If a user wasn’t logged in, they had access to fewer pages, e.g., no access to create, read, update or delete a booking.
-As a customer, I can instantly know what the purpose of the website is, so that I can click on the relevant buttons/path, to get me to book a class. | This was achieved on the homepage. Where the card title and subtext instantly let a visitor know what the website is about and that they must create an account before they can book a class. So, it’s cleat to the user, what actions they must take first, before they can book a class.
+As a customer, I can instantly know what the purpose of the website is, so that I can click on the relevant buttons/path, to get me to book a class. | This was achieved on the homepage. Where the card title and subtext instantly let a visitor know what the website is about and that they must create an account before they can book a class. So, it’s clear to the user, what actions they must take first, before they can book a class.
 As a customer, I can create a booking and choose which mixologist I want to be taught by, so that I can learn from their experience and someone who has similarities to myself. | This was achieved on the “Book a Class” page. Where a user can create a booking and choose which mixologist they would like to be taught by. They can make this decision based on the topline detail of each of the mixologists that work at GinTopia, which is listed under the booking form.
 As a developer, I can ensure the steps to log in and out are simple, so that users can create accounts and create bookings with ease. | This was achieved utilizing Django’s template login, log out and sign-up html files. So, if a user clicks on the sign-up page, but already has an account, they can click on the same page and be redirected to login page. And if a logged in user wants to logout, they can navigate to the top-right-hand corner and click logout. Where they will see a page asking them to confirm their decision to logout. It’s a user-friendly setup, which is easy to navigate through.
 As a customer, I can send an email to GinTopia, so that I can make sure they see any enquiries that I have. | This was achieved on the “Contact Us” page. A user would need to fill out their name, email address and enquiry, to be able to send a successful submission. They will be notified that the enquiry has been successfully sent via an alert pop-up.
@@ -44,6 +44,7 @@ The project design is split into 3 parts: the appearance of the website, access 
 
 * Additionally, if a user hasn’t created an account nor logged in, their CTA buttons will differ to those who are logged in. 
     * Logged in CTA
+    ![image](book-now-cta-small.png)
     * Not logged in CTA
 
 ### Database Structure

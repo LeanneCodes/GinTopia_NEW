@@ -7,17 +7,15 @@ from .forms import ReservationForm
 
 # Homepage view
 def index(request):
-    return render(request, 'reservations/index.html')
+    return render(request, "reservations/index.html")
 
 
 # Show logged in users their current bookings, if they have any
 def show_booking(request):
     items = request.user.hiuser.all()
-    context = {
-        'items': items
-    }
+    context = {"items": items}
 
-    return render(request, 'reservations/show_booking.html', context)
+    return render(request, "reservations/show_booking.html", context)
 
 
 # Show logged in users the booking form to create their booking
@@ -27,21 +25,23 @@ def booking_form(request):
         if form.is_valid():
             form.instance.user = request.user
             form.save()
-            messages.success(request, 'Your booking was created successfully!')
-            return redirect('show_booking')
+            messages.success(request, "Your booking was created successfully!")
+            return redirect("show_booking")
         else:
-            messages.warning(request,
-                             'Booking not successful. '
-                             'Check date chosen is not in the past. '
-                             'Please ensure all fields have valid inputs.')
-            return redirect('booking_form')
+            messages.warning(
+                request,
+                "Booking not successful. "
+                "Check date chosen is not in the past. "
+                "Please ensure all fields have valid inputs.",
+            )
+            return redirect("booking_form")
     else:
         form = ReservationForm
         context = {
-            'form': form,
+            "form": form,
         }
 
-    return render(request, 'reservations/booking_form.html', context)
+    return render(request, "reservations/booking_form.html", context)
 
 
 # Give logged in users the opportunity to update their bookings
@@ -53,18 +53,21 @@ def update_booking(request, item_id):
         if form.is_valid():
             form.instance.user = request.user
             form.save()
-            messages.success(request, 'Your booking was updated successfully!')
-            return redirect('show_booking')
+            messages.success(request, "Your booking was updated successfully!")
+            return redirect("show_booking")
         else:
-            messages.warning(request, 'Booking was not updated. '
-                             'Check date chosen is not in the past. '
-                             'Please ensure all fields have valid inputs.')
+            messages.warning(
+                request,
+                "Booking was not updated. "
+                "Check date chosen is not in the past. "
+                "Please ensure all fields have valid inputs.",
+            )
     form = ReservationForm
     context = {
-        'form': form,
+        "form": form,
     }
 
-    return render(request, 'reservations/update_booking.html', context)
+    return render(request, "reservations/update_booking.html", context)
 
 
 # Logged in users can delete their booking and be redirected
@@ -72,10 +75,10 @@ def update_booking(request, item_id):
 def delete_booking(request, item_id):
     schedule = get_object_or_404(Reservation, id=item_id)
     if schedule.delete():
-        messages.success(request, 'Your booking was deleted successfully!')
-        return redirect('show_booking')
+        messages.success(request, "Your booking was deleted successfully!")
+        return redirect("show_booking")
     else:
-        messages.warning(request, 'Booking was not deleted.')
+        messages.warning(request, "Booking was not deleted.")
 
 
 # All About Gin page view
@@ -86,13 +89,11 @@ def all_about_gin(request):
     with open("data/gin.json", "r") as json_data:
         data = json.load(json_data)
 
-    context = {
-        'data': data
-    }
+    context = {"data": data}
 
     return render(request, "reservations/all_about_gin.html", context)
 
 
 # The Contact Us page view
 def contact_us(request):
-    return render(request, 'reservations/contact_us.html')
+    return render(request, "reservations/contact_us.html")

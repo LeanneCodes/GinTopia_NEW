@@ -6,18 +6,40 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('reservations', '0013_remove_reservation_status'),
+        ("reservations", "0013_remove_reservation_status"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='reservation',
-            name='for_how_many',
-            field=models.IntegerField(choices=[('1', '1'), ('2', '2'), ('3', '3'), ('4', '4'), ('5', '5'), ('6', '6'), ('7', '7'), ('8', '8'), ('9', '9'), ('10', '10')]),
+            model_name="reservation",
+            name="for_how_many",
+            field=models.IntegerField(
+                choices=[
+                    ("1", "1"),
+                    ("2", "2"),
+                    ("3", "3"),
+                    ("4", "4"),
+                    ("5", "5"),
+                    ("6", "6"),
+                    ("7", "7"),
+                    ("8", "8"),
+                    ("9", "9"),
+                    ("10", "10"),
+                ]
+            ),
         ),
         migrations.AlterField(
-            model_name='reservation',
-            name='time',
-            field=models.TimeField(choices=[('13:00', '13:00'), ('15:00', '15:00'), ('17:00', '17:00'), ('19:00', '19:00'), ('21:00', '21:00')], max_length=5),
+            model_name="reservation",
+            name="time",
+            field=models.TimeField(
+                choices=[
+                    ("13:00", "13:00"),
+                    ("15:00", "15:00"),
+                    ("17:00", "17:00"),
+                    ("19:00", "19:00"),
+                    ("21:00", "21:00"),
+                ],
+                max_length=5,
+            ),
         ),
     ]

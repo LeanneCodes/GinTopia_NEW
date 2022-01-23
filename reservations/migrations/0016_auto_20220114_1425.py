@@ -6,18 +6,43 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('reservations', '0015_alter_reservation_time'),
+        ("reservations", "0015_alter_reservation_time"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='reservation',
-            name='for_how_many',
-            field=models.CharField(choices=[(1, '1'), (2, '2'), (3, '3'), (4, '4'), (5, '5'), (6, '6'), (7, '7'), (8, '8'), (9, '9'), (10, '10')], default=1, max_length=2),
+            model_name="reservation",
+            name="for_how_many",
+            field=models.CharField(
+                choices=[
+                    (1, "1"),
+                    (2, "2"),
+                    (3, "3"),
+                    (4, "4"),
+                    (5, "5"),
+                    (6, "6"),
+                    (7, "7"),
+                    (8, "8"),
+                    (9, "9"),
+                    (10, "10"),
+                ],
+                default=1,
+                max_length=2,
+            ),
         ),
         migrations.AlterField(
-            model_name='reservation',
-            name='time',
-            field=models.CharField(choices=[(1, '13:00'), (3, '15:00'), (5, '17:00'), (7, '19:00'), (9, '21:00')], default=1, max_length=10),
+            model_name="reservation",
+            name="time",
+            field=models.CharField(
+                choices=[
+                    (1, "13:00"),
+                    (3, "15:00"),
+                    (5, "17:00"),
+                    (7, "19:00"),
+                    (9, "21:00"),
+                ],
+                default=1,
+                max_length=10,
+            ),
         ),
     ]

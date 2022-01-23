@@ -8,23 +8,50 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('reservations', '0022_alter_reservation_time'),
+        ("reservations", "0022_alter_reservation_time"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='reservation',
-            name='date',
-            field=models.DateField(validators=[django.core.validators.MinValueValidator(datetime.date.today)]),
+            model_name="reservation",
+            name="date",
+            field=models.DateField(
+                validators=[
+                    django.core.validators.MinValueValidator(datetime.date.today)
+                ]
+            ),
         ),
         migrations.AlterField(
-            model_name='reservation',
-            name='for_how_many',
-            field=models.CharField(choices=[('1', '1'), ('2', '2'), ('3', '3'), ('4', '4'), ('5', '5'), ('6', '6'), ('7', '7'), ('8', '8'), ('9', '9'), ('10', '10')], max_length=6),
+            model_name="reservation",
+            name="for_how_many",
+            field=models.CharField(
+                choices=[
+                    ("1", "1"),
+                    ("2", "2"),
+                    ("3", "3"),
+                    ("4", "4"),
+                    ("5", "5"),
+                    ("6", "6"),
+                    ("7", "7"),
+                    ("8", "8"),
+                    ("9", "9"),
+                    ("10", "10"),
+                ],
+                max_length=6,
+            ),
         ),
         migrations.AlterField(
-            model_name='reservation',
-            name='time',
-            field=models.CharField(choices=[('13:00', '13:00'), ('15:00', '15:00'), ('17:00', '17:00'), ('19:00', '19:00'), ('21:00', '21:00')], max_length=6),
+            model_name="reservation",
+            name="time",
+            field=models.CharField(
+                choices=[
+                    ("13:00", "13:00"),
+                    ("15:00", "15:00"),
+                    ("17:00", "17:00"),
+                    ("19:00", "19:00"),
+                    ("21:00", "21:00"),
+                ],
+                max_length=6,
+            ),
         ),
     ]

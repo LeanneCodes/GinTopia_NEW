@@ -6,18 +6,18 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('reservations', '0011_alter_reservation_for_how_many'),
+        ("reservations", "0011_alter_reservation_for_how_many"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='reservation',
-            name='for_how_many',
+            model_name="reservation",
+            name="for_how_many",
             field=models.IntegerField(),
         ),
         migrations.AlterField(
-            model_name='reservation',
-            name='time',
+            model_name="reservation",
+            name="time",
             field=models.TimeField(),
         ),
     ]

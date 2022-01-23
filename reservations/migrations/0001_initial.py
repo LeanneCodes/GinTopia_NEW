@@ -8,39 +8,61 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Mixologist',
+            name="Mixologist",
             fields=[
-                ('first_name', models.CharField(max_length=30, primary_key=True, serialize=False)),
-                ('last_name', models.CharField(max_length=30)),
-                ('user_phone', models.CharField(max_length=11)),
+                (
+                    "first_name",
+                    models.CharField(max_length=30, primary_key=True, serialize=False),
+                ),
+                ("last_name", models.CharField(max_length=30)),
+                ("user_phone", models.CharField(max_length=11)),
             ],
             options={
-                'ordering': ['last_name'],
+                "ordering": ["last_name"],
             },
         ),
         migrations.CreateModel(
-            name='Reservation',
+            name="Reservation",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('first_name', models.CharField(max_length=30)),
-                ('last_name', models.CharField(max_length=30)),
-                ('user_email', models.EmailField(max_length=254, unique=True)),
-                ('user_phone', models.CharField(max_length=11)),
-                ('date', models.DateField()),
-                ('time', models.TimeField()),
-                ('for_how_many', models.IntegerField()),
-                ('status', models.IntegerField(choices=[(0, 'Pending'), (1, 'Complete')], default=0)),
-                ('requests', models.TextField(blank=True, null=True)),
-                ('slug', models.SlugField(max_length=200, unique=True)),
-                ('mixologist', models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='reservations.mixologist')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("first_name", models.CharField(max_length=30)),
+                ("last_name", models.CharField(max_length=30)),
+                ("user_email", models.EmailField(max_length=254, unique=True)),
+                ("user_phone", models.CharField(max_length=11)),
+                ("date", models.DateField()),
+                ("time", models.TimeField()),
+                ("for_how_many", models.IntegerField()),
+                (
+                    "status",
+                    models.IntegerField(
+                        choices=[(0, "Pending"), (1, "Complete")], default=0
+                    ),
+                ),
+                ("requests", models.TextField(blank=True, null=True)),
+                ("slug", models.SlugField(max_length=200, unique=True)),
+                (
+                    "mixologist",
+                    models.ForeignKey(
+                        null=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="reservations.mixologist",
+                    ),
+                ),
             ],
             options={
-                'ordering': ['date'],
+                "ordering": ["date"],
             },
         ),
     ]

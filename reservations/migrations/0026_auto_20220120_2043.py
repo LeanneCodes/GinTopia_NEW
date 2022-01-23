@@ -6,18 +6,21 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('reservations', '0025_reservation_gender'),
+        ("reservations", "0025_reservation_gender"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='reservation',
-            name='age',
+            model_name="reservation",
+            name="age",
             field=models.IntegerField(),
         ),
         migrations.AlterField(
-            model_name='reservation',
-            name='gender',
-            field=models.CharField(choices=[('Woman', 'Woman'), ('Man', 'Man'), ('Other', 'Other')], max_length=6),
+            model_name="reservation",
+            name="gender",
+            field=models.CharField(
+                choices=[("Woman", "Woman"), ("Man", "Man"), ("Other", "Other")],
+                max_length=6,
+            ),
         ),
     ]

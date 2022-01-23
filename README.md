@@ -5,6 +5,8 @@ GinTopia is a cocktail events bar and hosts classes, where people come to learn 
 
 Intrigued visitors can book a class directly on the website and see their booking(s) in one place, where they can edit or delete their booking(s). However, they must create an account and be logged in to create a booking. This is an opportunity for GinTopia to collect user data and use it for marketing purposes if they wish to do so.
 
+[GinTopia Website](https://gintopia-new.herokuapp.com/)
+
 ## User Stories & Project Goals
 GinTopia had a vision on what they would like to achieve from their website. They mapped out the needs from a customer and developer’s point-of-view and constructed manageable tasks for the challenge to be accepted and tackled. Below is a table of the user stories that derived at the beginning of planning and if/how they were implemented on GinTopia.
 
@@ -259,7 +261,7 @@ The project design is split into 3 parts: the appearance of the website, access 
     <summary>Tests Conducted</summary>
 
 ### Automated
-* The automated coverage report results at 88%. The remaining 12% of tests is covered under manual testing.
+* The automated coverage report results at 88%. The remaining 12% of tests is covered under manual testing. This is due to example code not working for this project, therefore, decided to show the remaining code works via manual testing.
 
 ![image](media/coverage-report.png)
 
@@ -276,13 +278,13 @@ Django | Administration Backend | To show that the model strings return as eithe
 
 * CSS3 Jigsaw Validator – No errors found
 
-* Pep8 – No errors except in settings.py and manage.py
+* Pep8 – No errors. Used "Black" python formatting to override line issue for code in settings.py and manage.py that went over the 79 character point.
 
 * JShint – No errors except for config.js
 
 * Heroku works correctly as planned across Google Chrome, Safari, Microsoft Edge and Mozilla Firefox
 
-* Tested the Heroku program on iPhone 11, Google Pixel 2, Motorola Edge and Huawei P9
+* Tested the Heroku program on iPhone 12, Google Pixel 2, Motorola Edge and Huawei P9
 </details>
 
 ## Project Bugs & Solutions

@@ -7,5 +7,15 @@ from .models import Reservation
 class ReservationForm(ModelForm):
     class Meta:
         model = Reservation
-        fields = ['first_name', 'last_name', 'user_email', 'age', 'gender',
-                  'user_phone', 'date', 'time', 'for_how_many', 'mixologist']
+        fields = [
+            "first_name",
+            "last_name",
+            "user_email",
+            "age",
+            "gender",
+            "user_phone",
+            "date",
+            "time",
+            "for_how_many",
+            "mixologist",
+        ]

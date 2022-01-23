@@ -8,28 +8,42 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('reservations', '0023_auto_20220118_2149'),
+        ("reservations", "0023_auto_20220118_2149"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='reservation',
-            name='age',
+            model_name="reservation",
+            name="age",
             field=models.IntegerField(default=18),
         ),
         migrations.AlterField(
-            model_name='reservation',
-            name='date',
-            field=models.DateField(max_length=10, validators=[django.core.validators.MinValueValidator(datetime.date.today)]),
+            model_name="reservation",
+            name="date",
+            field=models.DateField(
+                max_length=10,
+                validators=[
+                    django.core.validators.MinValueValidator(datetime.date.today)
+                ],
+            ),
         ),
         migrations.AlterField(
-            model_name='reservation',
-            name='slug',
+            model_name="reservation",
+            name="slug",
             field=models.SlugField(max_length=250),
         ),
         migrations.AlterField(
-            model_name='reservation',
-            name='time',
-            field=models.CharField(choices=[('13:00', '13:00'), ('15:00', '15:00'), ('17:00', '17:00'), ('19:00', '19:00'), ('21:00', '21:00')], max_length=5),
+            model_name="reservation",
+            name="time",
+            field=models.CharField(
+                choices=[
+                    ("13:00", "13:00"),
+                    ("15:00", "15:00"),
+                    ("17:00", "17:00"),
+                    ("19:00", "19:00"),
+                    ("21:00", "21:00"),
+                ],
+                max_length=5,
+            ),
         ),
     ]

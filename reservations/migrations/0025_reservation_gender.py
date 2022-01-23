@@ -6,13 +6,17 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('reservations', '0024_auto_20220120_1813'),
+        ("reservations", "0024_auto_20220120_1813"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='reservation',
-            name='gender',
-            field=models.CharField(choices=[('Woman', 'Woman'), ('Man', 'Man'), ('Other', 'Other')], default='Other', max_length=6),
+            model_name="reservation",
+            name="gender",
+            field=models.CharField(
+                choices=[("Woman", "Woman"), ("Man", "Man"), ("Other", "Other")],
+                default="Other",
+                max_length=6,
+            ),
         ),
     ]

@@ -6,18 +6,40 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('reservations', '0019_auto_20220114_2016'),
+        ("reservations", "0019_auto_20220114_2016"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='reservation',
-            name='for_how_many',
-            field=models.IntegerField(choices=[(1, '1'), (2, '2'), (3, '3'), (4, '4'), (5, '5'), (6, '6'), (7, '7'), (8, '8'), (9, '9'), (10, '10')]),
+            model_name="reservation",
+            name="for_how_many",
+            field=models.IntegerField(
+                choices=[
+                    (1, "1"),
+                    (2, "2"),
+                    (3, "3"),
+                    (4, "4"),
+                    (5, "5"),
+                    (6, "6"),
+                    (7, "7"),
+                    (8, "8"),
+                    (9, "9"),
+                    (10, "10"),
+                ]
+            ),
         ),
         migrations.AlterField(
-            model_name='reservation',
-            name='time',
-            field=models.TimeField(choices=[(1, '13:00'), (3, '15:00'), (5, '17:00'), (7, '19:00'), (9, '21:00')], max_length=5),
+            model_name="reservation",
+            name="time",
+            field=models.TimeField(
+                choices=[
+                    (1, "13:00"),
+                    (3, "15:00"),
+                    (5, "17:00"),
+                    (7, "19:00"),
+                    (9, "21:00"),
+                ],
+                max_length=5,
+            ),
         ),
     ]

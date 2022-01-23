@@ -28,7 +28,7 @@ class Reservation(models.Model):
         ("15:00", "15:00"),
         ("17:00", "17:00"),
         ("19:00", "19:00"),
-        ("21:00", "21:00")
+        ("21:00", "21:00"),
     ]
 
     PEOPLE = [
@@ -41,28 +41,27 @@ class Reservation(models.Model):
         ("7", "7"),
         ("8", "8"),
         ("9", "9"),
-        ("10", "10")
+        ("10", "10"),
     ]
 
-    GENDER = [
-        ("Woman", "Woman"),
-        ("Man", "Man"),
-        ("Other", "Other")
-    ]
+    GENDER = [("Woman", "Woman"), ("Man", "Man"), ("Other", "Other")]
 
-    user = models.ForeignKey(User, default='', null=True,
-                             on_delete=models.CASCADE, related_name='hiuser')
+    user = models.ForeignKey(
+        User, default="", null=True, on_delete=models.CASCADE,
+        related_name="hiuser"
+    )
     first_name = models.CharField(max_length=30)
     age = models.IntegerField(blank=False, null=False)
     gender = models.CharField(max_length=6, choices=GENDER)
     last_name = models.CharField(max_length=30)
     user_email = models.EmailField(max_length=254)
     user_phone = models.CharField(max_length=11)
-    date = models.DateField(max_length=10, validators=[MinValueValidator(
-                            datetime.date.today)])
+    date = models.DateField(
+        max_length=10, validators=[MinValueValidator(datetime.date.today)]
+    )
     time = models.CharField(max_length=5, choices=TIMES)
     for_how_many = models.CharField(max_length=6, choices=PEOPLE)
-    mixologist = models.ForeignKey('Mixologist', null=True,
+    mixologist = models.ForeignKey("Mixologist", null=True,
                                    on_delete=models.CASCADE)
     slug = models.SlugField(max_length=250, unique=False)
 

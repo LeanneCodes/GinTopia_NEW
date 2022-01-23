@@ -53,9 +53,16 @@ The project design is split into 3 parts: the appearance of the website, access 
 
     * The second reason is for the purpose of scheduling. Due to the Mixologist model being linked to the Reservation model, if a Mixologist is suddenly unable to attend a shift, any bookings associated to them, will be deleted. One of the future features to be implemented is a text and/or email to notify a user a change to their booking from the Django administration backend.
 
+    ![image](media/data-schema.png)
+    The data schema is a visual representation of how the two models are linked, via the Reservation's mixologist foreign key and the the Mixologist's first_name primary key.
+
     * The database captures a host of user data, including name, age, gender, email, phone, as well as the time and date of their booking, how many people are they booking on behalf for and the mixologist they wish to be taught by.
 
     * This data can be filtered in a few ways, so that the admin can see which booking records fall under specific search/filter criteria.
+
+    * The superuser who has admin level access to the database backend, will be able to see all bookings created by every user.
+
+![image](media/admin-view.png)
 
 ## Current Features
 <details>

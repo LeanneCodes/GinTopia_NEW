@@ -285,9 +285,19 @@ Django | Administration Backend | To show that the model strings return as eithe
 
 * CSS3 Jigsaw Validator – No errors found
 
-* Pep8 – No errors. Used "Black" python formatting to override line issue for code in settings.py and manage.py that went over the 79 character point.
+* Pep8 – No errors found on python files except on settings.py and env.py. This is due to keys and urls that cannot be split to conform to the 79 character rule.
 
-* JShint – No errors except for config.js
+* JShint – No errors found
+    * Owl Carousel
+        * There is only one function in this file.
+        * It takes no arguments.
+        * This function contains 2 statements.
+        * Cyclomatic complexity number for this function is 1.
+    * EmailJS
+        * There are 3 functions in this file.
+        * Function with the largest signature take 1 arguments, while the median is 1.
+        * Largest function has 2 statements in it, while the median is 2.
+        * The most complex function has a cyclomatic complexity value of 1 while the median is 1.
 
 * Heroku works correctly as planned across Google Chrome, Safari, Microsoft Edge and Mozilla Firefox
 
@@ -307,6 +317,7 @@ Bootstrap Buttons Expanding – During testing, when clicking on any button that
 Bugs | Unsolved
 -------- | --------
 Mobile Bootstrap Modal – The modal appears and works correctly across all screen devices via devtools and works outside of devtools, except for iPhones, where the modal grey backdrop appears, but the modal itself is partially in view, or doesn’t show at all. | Currently, no solution to this problem, but it does function correctly on devtools with the dimensions specified for an iPhone 12 Pro. ![image](media/iphone-delete.png) ![image](media/iphone-successful.png)
+Django Email Messages - The info alert appears when a new user signs up, but no confirmation email is sent to that email addresses, let alone the subsequent messages the user would receive if they had received the confirmation email | ![image](media/confirmation-email.png)
 
 ## Deployment
 <details>

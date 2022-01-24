@@ -285,7 +285,7 @@ Django | Administration Backend | To show that the model strings return as eithe
 
 * CSS3 Jigsaw Validator – No errors found
 
-* Pep8 – No errors found on python files except on settings.py and env.py. This is due to keys and urls that cannot be split to conform to the 79 character rule.
+* Pep8 – No errors found
 
 * JShint – No errors found
     * Owl Carousel

@@ -1,9 +1,9 @@
 # GinTopia
 
 ## Introduction
-GinTopia is a cocktail events bar and hosts classes, where people come to learn how to make their favourite gin-based cocktails and discover new flavours they may have not encountered before. Their aim is to inform people on the different types of gin and what role these gins have. For example, Ableforth's Bathtub Gin is great for a dry martini, whereas, Four Pillars Olive Leaf Gin, is best for a dirty martini.
+GinTopia is a cocktail events bar and hosts classes, where people come to learn how to make their favourite gin cocktails and discover new flavours they may have not encountered before. Their aim is to inform people on the different types of gin and what role these gins have. For example, Ableforth's Bathtub Gin is great for a dry martini, whereas, Four Pillars Olive Leaf Gin, is best for a dirty martini.
 
-Intrigued visitors can book a class directly on the website and see their booking(s) in one place, where they can edit or delete their booking(s). However, they must create an account and be logged in to create a booking. This is an opportunity for GinTopia to collect user data and use it for marketing purposes if they wish to do so.
+Registered account users can book a class directly on the website and see their booking(s) in one place, where they can edit or delete their booking(s). Those who don't have an account, won't have access to do this and will need to create an account in order to so. This is an opportunity for GinTopia to collect user data and use it for marketing purposes if they wish to do so.
 
 [GinTopia Website](https://gintopia-new.herokuapp.com/)
 
@@ -14,9 +14,9 @@ User Story | Project Goals
 -------- | --------
 As a customer, I can edit and delete my bookings, so that I can be in control of my bookings. | This was achieved in the “Your Bookings” page, where a user can select a booking and choose whether to edit or delete any booking that they have made.
 As a developer, I can limit access to certain pages, so that only logged in users can book a class and view their bookings. | This was achieved using an “if statement” in the navigation section. If a user was logged in they would have access to all pages within GinTopia. If a user wasn’t logged in, they had access to fewer pages, e.g., no access to create, read, update or delete a booking.
-As a customer, I can instantly know what the purpose of the website is, so that I can click on the relevant buttons/path, to get me to book a class. | This was achieved on the homepage. Where the card title and subtext instantly let a visitor know what the website is about and that they must create an account before they can book a class. So, it’s clear to the user, what actions they must take first, before they can book a class.
+As a customer, I can instantly know what the purpose of the website is, so that I can click on the relevant buttons/path, to get me to book a class. | This was achieved on the homepage. Where the card title and subtext instantly lets a visitor know what the website is about and that they must create an account before they can book a class. So, it’s clear to the user, what actions they must take first, before they can book a class.
 As a customer, I can create a booking and choose which mixologist I want to be taught by, so that I can learn from their experience and someone who has similarities to myself. | This was achieved on the “Book a Class” page. Where a user can create a booking and choose which mixologist they would like to be taught by. They can make this decision based on the topline detail of each of the mixologists that work at GinTopia, which is listed under the booking form.
-As a developer, I can ensure the steps to log in and out are simple, so that users can create accounts and create bookings with ease. | This was achieved utilizing Django’s template login, log out and sign-up html files. So, if a user clicks on the sign-up page, but already has an account, they can click on the same page and be redirected to login page. And if a logged in user wants to logout, they can navigate to the top-right-hand corner and click logout. Where they will see a page asking them to confirm their decision to logout. It’s a user-friendly setup, which is easy to navigate through.
+As a developer, I can ensure the steps to log in and out are simple, so that users can create accounts and create bookings with ease. | This was achieved utilizing Django’s template login, log out and sign-up html files. So, if a user clicks on the sign-up page, but already has an account, they can click on the same page and be redirected to the login page. And if a logged in user wants to logout, they can navigate to the top-right-hand corner and click logout. Where they will see a page asking them to confirm their decision to logout. It’s a user-friendly setup, which is easy to navigate through.
 As a customer, I can send an email to GinTopia, so that I can make sure they see any enquiries that I have. | This was achieved on the “Contact Us” page. A user would need to fill out their name, email address and enquiry, to be able to send a successful submission. They will be notified that the enquiry has been successfully sent via an alert pop-up.
 As a developer, I can direct users to book a class on any page, so that they don't need to go back to the homepage every time. | This was achieved via the footer on every page. When a user is logged in, they will have a call-to-action button stating, “Book Now”, which will lead them directly to the “Book a Class” page, where the booking form is. 
 As a customer, I can learn about the different types of gins there are, so that I can make famous gin cocktails with the right type of gin. | This was achieved on the “All About Gin” page. On this page, it’s listed the different categories of gin and what gin ranks best in that category. Each bottle comes with a description about it, to educate the visitor on that gin. It also advises what role some gins have, for example, the Ableforth’s Bathtub Gin, is best for a dry martini.
@@ -35,7 +35,7 @@ The project design is split into 3 parts: the appearance of the website, access 
 
 ![image](media/handlee-gintopia.png)
 
-* The imagery on the homepage was chosen for its dark, sophisticated, alluring route, encouraging visitors to be tempted to book a class. On the hero image, there is a call-to-action (CTA) button overlayed, and this was done to drive visitors to book a class. Where the aim to give visitors a taste of what the venue would be like when they come to visit; dark, attractive with an element of mystery.
+* The imagery on the homepage was chosen for its dark, sophisticated, alluring route, encouraging visitors to be tempted to book a class. On the hero image, there is a call-to-action (CTA) button overlayed, and this was done to drive visitors to book a class. Where the aim is to give visitors a taste of what the venue would be like when they come to visit; dark, attractive with an element of mystery.
 
 * This style was continued on the booking form pages, to once again give an insight into what kind of experience they may have at the gin-cocktail making class.
 
@@ -45,7 +45,7 @@ The project design is split into 3 parts: the appearance of the website, access 
 (Wireframe created using Figma)
 
 ### Role Access
-* GinTopia wants to offer the opportunity for visitors to book a class, but they must create an account to do so. Part of the booking process requires users to provide an email and phone number for the form to be valid. This means GinTopia can leverage this data for future marketing purposes.
+* GinTopia wants to offer the opportunity for visitors to book a class, but they must create an account to do so. This means GinTopia can leverage this data for future marketing purposes.
 
 * Those who create an account will have the booking form page visible to them, as well as a “Your Bookings” page, where they can see the booking(s) they have made.
 
@@ -58,12 +58,12 @@ The project design is split into 3 parts: the appearance of the website, access 
 
 ### Database Structure
 * The database is made up of two models, a Reservation model and a Mixologist model. It was created like this for two reasons.
-    * For the first reason, on the booking form page, logged in users can see the mixologists that work for GinTopia and see their name, age, experience and their favourite gin cocktail. This display is provided to the visitor so that they can choose which mixologist they would like to be taught by. For the purpose of this project, the Mixologists work every day. This gives the user a choice and a small element of control on how their experience may pan out.
+    * For the first reason, on the booking form page, logged in users can see the mixologists that work for GinTopia and see their name, age, experience and their favourite gin cocktail. This display is provided to the visitor so that they can choose which mixologist they would like to be taught by. For the purpose of this project, the Mixologists work all classes, every day. This gives the user a choice and a small element of control on how their experience may pan out.
 
     * The second reason is for the purpose of scheduling. Due to the Mixologist model being linked to the Reservation model, if a Mixologist is suddenly unable to attend a shift, any bookings associated to them, will be deleted. One of the future features to be implemented is a text and/or email to notify a user a change to their booking from the Django administration backend.
 
     ![image](media/data-schema.png)
-    The data schema is a visual representation of how the two models are linked, via the Reservation's mixologist foreign key and the the Mixologist's first_name primary key.
+    The data schema is a visual representation on how the two models are linked, via the Reservation's mixologist foreign key and the Mixologist's first_name primary key.
 
     * The database captures a host of user data, including name, age, gender, email, phone, as well as the time and date of their booking, how many people are they booking on behalf for and the mixologist they wish to be taught by.
 
@@ -110,7 +110,7 @@ The project design is split into 3 parts: the appearance of the website, access 
         
         * It’s currently a list of 4 images, but a future implementation, would be to dedicate an entire page to gallery photos that a visitor could scroll through.
 
-        * Depending the screen size, a visitor is viewing this website on, they will either see an array of 4 images of a slideshow on a small device, consisting of the same images.
+        * Depending the screen size, a visitor is viewing this website on, they will either see an array of 4 images or a slideshow on a small device, consisting of the same images.
 
         ![image](media/gallery-desktop.png)
         (Large tablet/desktop view)
@@ -129,14 +129,14 @@ The project design is split into 3 parts: the appearance of the website, access 
 
         * For this form to submit, all fields need a valid input. This is due to either having the required attribute added to the form field in the html file or making sure blank and null are false in the models.py.
 
-        * In addition to this, to ensure the information that’s fed through to the database contains usable data, minimum and maximum limits have been implemented and the type of data that needs to be inputted. For example, for the mobile field, it needs a minimum of 11 digits, given that UK mobile numbers consist of 11 digits and the minimum age is 18, because you need to be at least 18 years old to drink alcohol in the UK. In addition, the date field, has the attribute type of date, so the date picker appears. Validator code was added to the models.py so that a user couldn’t pick a date in the past to reduce invalid bookings.
+        * In addition to this, to ensure the information that’s fed through to the database contains usable data, minimum and maximum limits have been implemented and the type of data that needs to be inputted. For example, for the mobile field, it needs a minimum of 11 digits, given that UK mobile numbers consist of 11 digits. Additionally, in the UK, as the legal age to drink is 18+, there is a minimum limit of 18 appended to the age field, so users cannot book a class with an age under 18. Regardless, if a user puts in a false age to meet requirements, all visitors who attend the class will be ID on arrival as an extra safety measure. In addition, the date field, has the attribute type of date, so the date picker appears. Validator code was added to the models.py so that a user couldn’t pick a date in the past to reduce invalid bookings.
 
         * GinTopia has classes that run from 1pm – 9pm at 2-hour intervals. Therefore, there are a selection of times a user can choose from.
 
         * It is also at this opportunity, where users can choose which mixologist they would like to be taught by. This list was curated in the Django Administration and pulled through to display on the user interface.
 
         ![image](media/booking-form.png)
-        (Booking for display)
+        (Booking form display)
 
         * The update booking form is the same layout, except the heading differs, as the action is different and the CTA says, “Update Booking”, rather than “Book Now”, when users are making a new booking.
 
@@ -150,7 +150,7 @@ The project design is split into 3 parts: the appearance of the website, access 
 (Large tablets/desktop view)
 
 ![image](media/mixologists-slideshow.png)
-(Small tablets/mobile view – a slideshow of the mixologists and snippet of info about them)
+(Small tablets/mobile view – a slideshow of the mixologists and a snippet of info about them)
 
 ### Your Bookings
 * When a book is successful, the user is redirected to the “Your Bookings” page.
@@ -161,7 +161,7 @@ The project design is split into 3 parts: the appearance of the website, access 
 
 ![image](media/successful-booking.png)
 
-* Bookings are listed in order of date, so upcoming bookings are listed at the top. Each booking shows important details the user may want to edit. Such as, email and phone number for contacting purposes and then the core booking information, such as date and time of the booking, the number of people attending and the mixologist.
+* Bookings are listed in order of date, so upcoming bookings are listed at the top. This view shows fewer fields than what the user inputted. This was done to show necessary data in the table. So for users who are viewing their bookings on mobile, won't need to scroll across as far, as they would need to if all info was listed in the table.
 
 ![image](media/bookings-table.png)
 
@@ -171,7 +171,7 @@ The project design is split into 3 parts: the appearance of the website, access 
 
 ![image](media/updated-booking-successfully.png)
 
-* If the user chooses to delete a booking, this can be done in two steps. First, they will click the delete button. Then a modal will pop up and ask if they’re sure they want to delete the booking. If they click yes, the booking is deleted, and they will receive an alert that this action was processed successfully. If they click close, then no booking has been deleted. This modal was implemented as defensive programming, so no accidental deletions could be made without the user confirming their actions.
+* If the user chooses to delete a booking, this can be done in two steps. First, they will click the delete button. Then a modal will pop up and ask if they’re sure they want to delete the booking. If they click yes, the booking is deleted, and they will receive an alert that this action was processed successfully. If they click close, then no booking has been deleted and the modal will disappear. This modal was implemented as defensive programming, so no accidental deletions could be made without the user confirming their actions.
 
 ![image](media/delete-booking.png)
 (Step 1 – Decide which booking you want to delete and then click “Delete”)
@@ -189,7 +189,7 @@ The project design is split into 3 parts: the appearance of the website, access 
 ### Contact Us
 * This page is great for visitors who have any questions or want to make requests for their booking, such as “Can I host a private event from 5pm-9pm?”
 
-* The page displays 2 main elements, a contact form and a map of the location. The map and address were included to reduce enquiries on where the event was.
+* The page displays 2 main elements, a contact form and a map of the location. The map and address were included to reduce enquiries on where the classes are located.
 
 * When a user submits their enquiry, an alert box pops up confirming that their enquiry was sent successfully.
 
@@ -225,7 +225,7 @@ The project design is split into 3 parts: the appearance of the website, access 
 * All fields must be completed, except for the email field, which is optional. Usernames must be unique, so if a user’s name is taken, they may need to add some characters, such as additional letters, numbers to make their username unique. And the passwords the user inputs must be the same, for the form to be valid and submitted. 
 
 ![image](media/signed-in.png)
-(Logged in, with confirmation that they have successfully logged in. They will also have access to book a class and view, edit and delete their booking (CRUD))
+(Logged in, with confirmation that they have successfully logged in. They will also have access to book a class, view the booking, edit and/or delete their booking (CRUD))
 
 * If the user chooses to sign out, they will be asked to confirm this action, once again defensive programming.
 
@@ -240,7 +240,7 @@ The project design is split into 3 parts: the appearance of the website, access 
 ![image](media/log-in.png)
 
 ### Footer
-* The footer, which is consistently display across every page is there to serve two functions. Direct users to GinTopia’s social media pages and encourage users to either book a class or create an account depending on their logged in status.
+* The footer, which is consistently displayed across every page, is there to serve two functions. Direct users to GinTopia’s social media pages and encourage users to either book a class or create an account depending on their logged in status.
 
 ![image](media/footer-not-logged-in.png)
 (Logged out or not created an account yet)
@@ -268,14 +268,14 @@ The project design is split into 3 parts: the appearance of the website, access 
     <summary>Tests Conducted</summary>
 
 ### Automated
-* The automated coverage report results at 88%. The remaining 12% of tests is covered under manual testing. This is due to example code not working for this project, therefore, decided to show the remaining code works via manual testing.
+* The automated coverage report results at 88%. The remaining 12% of tests is covered under manual testing. This is due to example code not working as planned for this project. Therefore, decided to show the remaining code works via manual testing.
 
 ![image](media/coverage-report.png)
 
 ### Manual
 Lanuague | Test | Outcome
 -------- | -------- | --------
-JavaScript | Enquiry Email via EmailJS | If all fields have been filled in and the data inputted is valid, the enquiry will submit successfully, with a status 200. A JavaScript alert will notify the user that the enquiry has been sent and the email associated with the EmailJS service will receive the enquiry. ![image](media/success-console.png)
+JavaScript | Enquiry Email via EmailJS | If all fields have been filled in and the data inputted is valid, the enquiry will submit successfully, with a status of 200. A JavaScript alert will notify the user that the enquiry has been sent and the email associated with the EmailJS service will receive the enquiry. ![image](media/success-console.png)
 JavaScript | Owl Carousel | With the rotating carousel, we can visually see the cards rotate every 10 seconds, which was set on the script. This is so users have enough time to read each review before the next card appears.
 Python | Confirmation Alerts | When a user does an action, such as login, log out, create, edit or delete a booking, they are notified with an alert at the top of the page that their action has been successful. They are then redirected to the “Your Bookings” page, in case they want to edit any more bookings or delete booking(s).
 Django | Administration Backend | To show that the model strings return as either first name for the Mixologist model and user’s email for the reservation, please see the images below: Mixologists - First Name ![image](media/first-name.png) Reservation - User Email ![image](media/user-email.png) Admin View ![image](media/string.png)
@@ -311,13 +311,14 @@ Bugs | Solutions
 -------- | --------
 Modal - The purpose of including the modal on the “Your Bookings” page, was to act as a last defensive mechanism before a user confirmed that they wanted to delete their booking. Prior to including this modal, the correct booking was deleted. When including the modal, the booking at the top of the list was deleted, instead of the booking that should have been deleted. | Replaced the Bootstrap standard template `data-bs-target="#exampleModal"` with `with data-bs-target=”#exampleModal-{{item.id}}”` and replace `div class="modal fade" id="exampleModal"` with `div class=”modal fade” id=”exampleModal-{{item.id}}”`. This additional piece of code told the website to target the specific item.id instead of deleting the top option in the bookings table.
 Server 500 Error – Visitors, who were signing up for the first time, were experiencing a server 500 error when they included an email in the sign-up form. The error didn’t explain what the error was or tell them that their account was created regardless of the error. Meaning this left some users to not continue with the website, which meant no bookings for GinTopia. | Include `EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"` into the settings.py file, so that the website will accept the email address inputted by the user and not disrupt the visitor journey on site.
-Bootstrap Buttons Expanding – During testing, when clicking on any button that had a Bootstrap class appended to it, the button would expand to two-thirds of the page before doing the action it was coded to do. | It was noticed that a Materialize Bootstrap CDN was added to the body on Base.html, which meant to conflicting design frameworks were trying to achieve different things. Given that Materialize was no longer needed, once it was removed, there were no more Bootstrap button issues.
+Bootstrap Buttons Expanding – During testing, when clicking on any button that had a Bootstrap class appended to it, the button would expand to two-thirds of the page before doing the action it was coded to do. | It was noticed that a Materialize Bootstrap CDN was added to the body on base.html, which meant two conflicting design frameworks were trying to achieve different things. Given that Materialize was no longer needed, once it was removed, there were no more Bootstrap button issues.
 
 ### Unresolved
-Bugs | Unsolved
+Bugs | Images of Issue
 -------- | --------
 Mobile Bootstrap Modal – The modal appears and works correctly across all screen devices via devtools and works outside of devtools, except for iPhones, where the modal grey backdrop appears, but the modal itself is partially in view, or doesn’t show at all. | Currently, no solution to this problem, but it does function correctly on devtools with the dimensions specified for an iPhone 12 Pro. ![image](media/iphone-delete.png) ![image](media/iphone-successful.png)
-Django Email Messages - The info alert appears when a new user signs up, but no confirmation email is sent to that email addresses, let alone the subsequent messages the user would receive if they had received the confirmation email | ![image](media/confirmation-email.png)
+Django Email Messages - The info alert appears when a new user signs up, but no confirmation email is sent to that address, let alone the subsequent messages the user would receive if they had received the confirmation email | Removed the "email_confirmation_sent.txt" file to see if this would prevent the message alert from displaying. ![image](media/confirmation-email.png)
+New page opens but signs user out on mobile - When some iPhone users are on the "All About Gin" page, and they click on the "Buy Now" button, it opens into a new tab as it should, `target="_blank"`. However, if the user has the Amazon app, the Amazon app opens and the internet page that had the GinTopia website is no longer there and the user is signed out.
 
 ## Deployment
 <details>
@@ -426,7 +427,7 @@ The SECRET_KEY | 12 | Push to heroku | `git push origin master main` | Note: Run
 * Footer design from https://mdbootstrap.com
 * Responsive image gallery on the homepage from YouTube
 * Owl carousel from https://freefrontend/bootstrap-testimonials/
-* Booking form design from https://colorlib.com
+* Booking form structure from https://colorlib.com
 * Bootstrap components for page structure
 
 ### Images

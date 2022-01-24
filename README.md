@@ -29,13 +29,20 @@ The project design is split into 3 parts: the appearance of the website, access 
 
 * The colour scheme derived from a Google image of a Rangpur gin bottle, which consisted of gold, green, white and brown tones. This was initially going to be the homepage hero image. But due to the white background and details on the bottle, it would be quite difficult for a user to understand any overlaying text. Therefore, a contrasting, dark image was used instead, which gives a seductive, inviting feel, yet encompasses the warmth tones around it.
 
+![image](media/rangpur.jpg)
+
 * The font used for the brand logo and larger headers was “Handlee” from Google Fonts. It was chosen due to its cursive nature, which can be quite inviting and seductive if used in moderation. Hence why, HTML heading tags 1, 2 and 3 were styled to have “Handlee” as the given font and the remaining 3 heading tags (4, 5 and 6) were assigned “Raleway”. Which is a font that would fall into a sans-serif category, making it an easy font that visitors can read, and it complements the “Handlee” font quite well.
+
+![image](media/handlee-gintopia.png)
 
 * The imagery on the homepage was chosen for its dark, sophisticated, alluring route, encouraging visitors to be tempted to book a class. On the hero image, there is a call-to-action (CTA) button overlayed, and this was done to drive visitors to book a class. Where the aim to give visitors a taste of what the venue would be like when they come to visit; dark, attractive with an element of mystery.
 
 * This style was continued on the booking form pages, to once again give an insight into what kind of experience they may have at the gin-cocktail making class.
 
 * Every page on the website has the same styled footer, with links to social media pages. (If this was a real company, the social buttons would link to GinTopia’s social media pages). The footer also includes a CTA button and copyright text for GinTopia. The footer is needed on every page as it’s an opportunity for a user to book a class after scrolling down a page that they’re consuming; it gives the page structure and a professional look and feel. It’s important to be present with the website’s goal (Book Now), without being intrusive, which can lead to a negative user experience.
+
+![image](media/wireframe-design.png)
+(Wireframe created using Figma)
 
 ### Role Access
 * GinTopia wants to offer the opportunity for visitors to book a class, but they must create an account to do so. Part of the booking process requires users to provide an email and phone number for the form to be valid. This means GinTopia can leverage this data for future marketing purposes.

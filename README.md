@@ -422,6 +422,8 @@ The SECRET_KEY | 12 | Push to heroku | `git push origin master main` | Note: Run
 
 * Django
 
+* Postgres
+
 ## Credits
 
 ### Code

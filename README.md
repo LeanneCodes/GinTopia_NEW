@@ -261,6 +261,8 @@ The project design is split into 3 parts: the appearance of the website, access 
 
 * Create a script so that only a certain number of people can book a class at any given date, to reduce large classes.
 
+* Timeslots that are in the past will be greyed out, so a user would not be able to book a class on the day that has already started/finished.
+
 * Users will be able to select multiple bookings to delete in one go.
 
 ## Testing
@@ -318,7 +320,6 @@ Bugs | Images of Issue
 -------- | --------
 Mobile Bootstrap Modal – The modal appears and works correctly across all screen devices via devtools and works outside of devtools, except for iPhones, where the modal grey backdrop appears, but the modal itself is partially in view, or doesn’t show at all. | Currently, no solution to this problem, but it does function correctly on devtools with the dimensions specified for an iPhone 12 Pro. ![image](media/iphone-delete.png) ![image](media/iphone-successful.png)
 Django Email Messages - The info alert appears when a new user signs up, but no confirmation email is sent to that address, let alone the subsequent messages the user would receive if they had received the confirmation email | Removed the "email_confirmation_sent.txt" file to see if this would prevent the message alert from displaying. ![image](media/confirmation-email.png)
-New page opens but signs user out on mobile - When some iPhone users are on the "All About Gin" page, and they click on the "Buy Now" button, it opens into a new tab as it should, `target="_blank"`. However, if the user has the Amazon app, the Amazon app opens and the internet page that had the GinTopia website is no longer there and the user is signed out.
 
 ## Deployment
 <details>

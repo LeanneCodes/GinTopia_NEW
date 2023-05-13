@@ -5,7 +5,7 @@ GinTopia is a cocktail events bar and hosts classes, where people come to learn 
 
 Registered account users can book a class directly on the website and see their booking(s) in one place, where they can edit or delete their booking(s). Those who don't have an account, won't have access to do this and will need to create an account in order to so. This is an opportunity for GinTopia to collect user data and use it for marketing purposes if they wish to do so.
 
-[GinTopia Website](https://gintopia-new.herokuapp.com/)
+[GinTopia Website](https://gintopia.onrender.com/)
 
 ## User Stories & Project Goals
 GinTopia had a vision on what they would like to achieve from their website. They mapped out the needs from a customer and developer’s point-of-view and constructed manageable tasks for the challenge to be accepted and tackled. Below is a table of the user stories that derived at the beginning of planning and if/how they were implemented on GinTopia.
